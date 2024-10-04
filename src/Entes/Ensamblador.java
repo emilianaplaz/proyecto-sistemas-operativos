@@ -8,6 +8,6 @@ package Entes;
  *
  * @author emilianaplaz
  */
-public class Ensambladores {
+public class Ensamblador {
     
 }

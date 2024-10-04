@@ -4,174 +4,103 @@
  */
 package Compañias;
 
-import Drive.Drive;
 import Estructuras.ListaDoble;
 import Estructuras.Nodo;
 import java.util.concurrent.Semaphore;
 
 /**
- *
- * @author emilianaplaz
+ * @author Emiliana Plaz
+ * @author Stefano Boschetti
  */
 public class Compania {
+
     private int duracionDia;
-    private int tipoCompania;
-    private Drive drive;
-    private float utilidades; //Utilidad
-    private ListaDoble ensambladores; //ensambladores
-    private ListaDoble prod_placa_base; //animadores
-    private ListaDoble prod_cpu; //disenadores de escenarios
-    private ListaDoble prod_memoria_ram; //guionistas
-    private ListaDoble prod_fuente_alimentacion; //Actores de doblaje
+    private int tipo;
+    private float prod_placa_base;
+    private float prod_cpu;
+    private float prod_ram;
+    private float prod_fuentes;
+    private float prod_graficas;
+    private Almacen almacen;
 
-    public Compania() {
-    }
-    
-    public Compania(Drive drive,int companyType) {
-        this.tipoCompania = companyType;
-        this.drive = drive;
-        this.utilidades = 0;
-        this.prod_placa_base = new ListaDoble();
-        this.prod_cpu = new ListaDoble();
-        this.prod_memoria_ram = new ListaDoble();
-        this.prod_fuente_alimentacion = new ListaDoble();
-        this.prod_tarjetas_graficas = new ListaDoble();
-    }
-    
-    public int cantidadTrabajadores(){
-        int respuesta = ensambladores.getSize()+
-                        prod_placa_base.getSize()+
-                        prod_cpu.getSize()+
-                        prod_memoria_ram.getSize()+
-                        prod_fuente_alimentacion.getSize()+
-                        prod_tarjetas_graficas.getSize();
-        return respuesta;
+    public Compania(int tipo) {
+        this.tipo = tipo;
+        this.duracionDia = 60; // Duracion del dia en segundos.
+        this.almacen = new Almacen(); // Se genera un nuevo almacen.
+        
+        if (tipo == 0) { //Cuando la compañia es Apple. (Stefano)
+//            Ultimo digito del carnet = 6
+            this.prod_placa_base = (float) 1/4; // 1 placa cada 4 dias
+            this.prod_cpu = (float) 1/4; // 1 CPU cada 4 dias
+            this.prod_ram = (float) 1; // 1 RAM cada dia
+            this.prod_fuentes = (float) 5; // 5 fuente cada dia
+            this.prod_graficas = (float) 1/2; // 1 grafica cada 2 dias
+
+        } else if (tipo == 1) { //Cuando la compañia es HP. (Emiliana)
+//            Ultimo digito del carnet = 3
+            this.prod_placa_base = (float) 1/3; // 1 placa cada 3 dias
+            this.prod_cpu = (float) 1/3; // 1 CPU cada 3 dias
+            this.prod_ram = (float) 2; // 2 RAM cada dia
+            this.prod_fuentes = (float) 3; // 3 fuente cada dia
+            this.prod_graficas = (float) 1/3; // 1 grafica cada 3 dias
+        }
     }
 
-    /**
-     * @return the tipoCompania
-     */
-    public int getTipoCompania() {
-        return tipoCompania;
-    }
 
-    /**
-     * @param tipoCompania the tipoCompania to set
-     */
-    public void setTipoCompania(int tipoCompania) {
-        this.tipoCompania = tipoCompania;
-    }
-
-    /**
-     * @return the drive
-     */
-    public Drive getDrive() {
-        return drive;
-    }
-
-    /**
-     * @param drive the drive to set
-     */
-    public void setDrive(Drive drive) {
-        this.drive = drive;
-    }
-
-    /**
-     * @return the utilidades
-     */
-    public float getUtilidades() {
-        return utilidades;
-    }
-
-    /**
-     * @param utilidades the utilidades to set
-     */
-    public void setUtilidades(float utilidades) {
-        this.utilidades = utilidades;
-    }
-
-    /**
-     * @return the ensambladores
-     */
-    public ListaDoble getEnsambladores() {
-        return ensambladores;
-    }
-
-    /**
-     * @param ensambladores the ensambladores to set
-     */
-    public void setEnsambladores(ListaDoble ensambladores) {
-        this.ensambladores = ensambladores;
-    }
-
-    /**
-     * @return the animadores
-     */
-    public ListaDoble getProdPlacaBase() {
-        return prod_placa_base;
-    }
-
-    /**
-     * @param animadores the animadores to set
-     */
-    public void setProdPlacaBase(ListaDoble prod_placa_base) {
-        this.prod_placa_base = prod_placa_base;
-    }
-
-    /**
-     * @return the disenadoresEscenarios
-     */
-    public ListaDoble getProdCPU() {
-        return prod_cpu;
-    }
-
-    /**
-     * @param disenadoresEscenarios the disenadoresEscenarios to set
-     */
-    public void setProdCPU(ListaDoble prod_cpu) {
-        this.prod_cpu = prod_cpu;
-    }
-
-    /**
-     * @return the guionistas
-     */
-    public ListaDoble getMemoriaRAM() {
-        return prod_memoria_ram;
-    }
-
-    /**
-     * @param guionistas the guionistas to set
-     */
-    public void setMemoriaRAM(ListaDoble prod_memoria_ram) {
-        this.prod_memoria_ram = prod_memoria_ram;
-    }
-
-    /**
-     * @return the actoresDoblaje
-     */
-    public ListaDoble getProdFuenteAlimentacion() {
-        return prod_fuente_alimentacion;
-    }
-
-    /**
-     * @param actoresDoblaje the actoresDoblaje to set
-     */
-    public void setProdFuenteAlimentacion(ListaDoble prod_fuente_alimentacion) {
-        this.prod_fuente_alimentacion = prod_fuente_alimentacion;
-    }
-
-    /**
-     * @return the duracionDia
-     */
     public int getDuracionDia() {
         return duracionDia;
     }
 
-    /**
-     * @param duracionDia the duracionDia to set
-     */
     public void setDuracionDia(int duracionDia) {
         this.duracionDia = duracionDia;
     }
-    
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public float getProd_placa_base() {
+        return prod_placa_base;
+    }
+
+    public void setProd_placa_base(float prod_placa_base) {
+        this.prod_placa_base = prod_placa_base;
+    }
+
+    public float getProd_cpu() {
+        return prod_cpu;
+    }
+
+    public void setProd_cpu(float prod_cpu) {
+        this.prod_cpu = prod_cpu;
+    }
+
+    public float getProd_ram() {
+        return prod_ram;
+    }
+
+    public void setProd_ram(float prod_ram) {
+        this.prod_ram = prod_ram;
+    }
+
+    public float getProd_fuentes() {
+        return prod_fuentes;
+    }
+
+    public void setProd_fuentes(float prod_fuentes) {
+        this.prod_fuentes = prod_fuentes;
+    }
+
+    public float getProd_graficas() {
+        return prod_graficas;
+    }
+
+    public void setProd_graficas(float prod_graficas) {
+        this.prod_graficas = prod_graficas;
+    }
+
 }
