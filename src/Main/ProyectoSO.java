@@ -4,6 +4,8 @@
  */
 package Main;
 
+import GUI.Home;
+
 /**
  *
  * @author emilianaplaz
@@ -15,6 +17,8 @@ public class ProyectoSO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Home homepage = new Home ();
+        homepage.setVisible(true); 
     }
     
 }
