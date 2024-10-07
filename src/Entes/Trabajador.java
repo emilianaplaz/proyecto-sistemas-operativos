@@ -37,26 +37,26 @@ public abstract class Trabajador {
         this.compania = compania;
 
         switch (tipo) {
-            case 0:
+            case 0 -> {
                 this.salario = 20;
                 this.produccionDiaria = compania.getProd_placa_base();
-                break;
-            case 1:
+            }
+            case 1 -> {
                 this.salario = 26;
                 this.produccionDiaria = compania.getProd_cpu();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 this.salario = 40;
                 this.produccionDiaria = compania.getProd_ram();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 this.salario = 16;
                 this.produccionDiaria = compania.getProd_fuentes();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 this.salario = 34;
                 this.produccionDiaria = compania.getProd_graficas();
-                break;
+            }
         }
     }
     
