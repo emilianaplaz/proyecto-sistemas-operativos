@@ -14,12 +14,17 @@ import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Trabajador {
+
+public abstract class Trabajador extends Thread{
 
     private Compania compania;
     private float salario;
+    private float salarioAcumulado;
     private int tipo;
     private float produccionDiaria;
+    private Semaphore mutex;
+
+    
 
     /*TIPOS DE TRABAJADORES:
         Productores de placa base                    = 0            $20/h
@@ -32,9 +37,10 @@ public abstract class Trabajador {
         Project manager                              = 6            $40/h
         Director                                     = 7            $60/h
      */
-    public Trabajador(int tipo, Compania compania) {
+    public Trabajador(int tipo, float salario, Semaphore mutex, Compania compania) {
         this.tipo = tipo;
         this.compania = compania;
+        this.salarioAcumulado = salarioAcumulado;
 
         switch (tipo) {
             case 0 -> {
@@ -58,6 +64,24 @@ public abstract class Trabajador {
                 this.produccionDiaria = compania.getProd_graficas();
             }
         }
+    }
+    
+    public float getSalario() {
+        return salario;
+    }
+
+    
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+        
+    public Compania getCompania() {
+        return compania;
+    }
+
+    
+    public void setCompania(Compania compania) {
+        this.compania = compania;
     }
     
 }

@@ -7,6 +7,7 @@ package Compañias;
 import Estructuras.ListaDoble;
 import Estructuras.Nodo;
 import java.util.concurrent.Semaphore;
+import Almacenes.Almacen;
 
 /**
  * @author Emiliana Plaz
@@ -23,7 +24,7 @@ public class Compania {
     private float prod_graficas;
     private Almacen almacen;
 
-    public Compania(int tipo) {
+    public Compania() {
         this.tipo = tipo;
         this.duracionDia = 60; // Duracion del dia en segundos.
         this.almacen = new Almacen(); // Se genera un nuevo almacen.
@@ -102,5 +103,16 @@ public class Compania {
     public void setProd_graficas(float prod_graficas) {
         this.prod_graficas = prod_graficas;
     }
+    
+
+    public Almacen getAlmacen() {
+        return almacen;
+    }
+
+   
+    public void setAlmacen(Almacen drive) {
+        this.almacen = drive;
+    }
+
 
 }
