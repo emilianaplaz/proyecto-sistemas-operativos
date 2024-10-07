@@ -23,6 +23,12 @@ public abstract class Trabajador extends Thread{
     private Compañia compania;
     private float salario;
     private float salarioAcumulado;
+<<<<<<< Updated upstream
+=======
+    private int tipo;
+    private float produccionDiaria;
+    private float progresoTrabajo; //Progreso en su trabajo, si es menor a 1 entonces no ha termina una pieza
+>>>>>>> Stashed changes
     private Semaphore mutex;
     private int tipo;
     private float CantidadDeTrabajoPorDia; //esta es la cantidad que se ira acumulando a la variable ACC
@@ -34,6 +40,7 @@ public abstract class Trabajador extends Thread{
         Productores de Fuente de alimentación        = 3            $16
         Productores de tarjetas gráficas             = 4            $34
     
+<<<<<<< Updated upstream
         Ensambladores                                = 5            $50
         Project manager                              = 6            $40
         Director                                     = 7            $60
@@ -87,6 +94,37 @@ public abstract class Trabajador extends Thread{
                 numero_retorno = (float) 0.5;
             }else if(this.getTipo() == 7){
                 numero_retorno = (float) 1;
+=======
+        Ensambladores                                = 5            $50/h
+        Project manager                              = 6            $40/h
+        Director                                     = 7            $60/h
+     */
+    public Trabajador(int tipo, float salario, Semaphore mutex, Compania compania) {
+        this.tipo = tipo;
+        this.compania = compania;
+        this.salarioAcumulado = salarioAcumulado;
+
+        switch (tipo) {
+            case 0 -> {
+                this.salario = 20;
+                this.produccionDiaria = compania.getProdDiariaPlacaBase();
+            }
+            case 1 -> {
+                this.salario = 26;
+                this.produccionDiaria = compania.getProdDiariaCpu();
+            }
+            case 2 -> {
+                this.salario = 40;
+                this.produccionDiaria = compania.getProdDiariaRam();
+            }
+            case 3 -> {
+                this.salario = 16;
+                this.produccionDiaria = compania.getProdDiariaFuentes();
+            }
+            case 4 -> {
+                this.salario = 34;
+                this.produccionDiaria = compania.getProdDiariaGraficas();
+>>>>>>> Stashed changes
             }
         }
         
@@ -180,4 +218,77 @@ public abstract class Trabajador extends Thread{
         this.compania = compania;
     }
 
+<<<<<<< Updated upstream
+=======
+    /**
+     * @return the salarioAcumulado
+     */
+    public float getSalarioAcumulado() {
+        return salarioAcumulado;
+    }
+
+    /**
+     * @param salarioAcumulado the salarioAcumulado to set
+     */
+    public void setSalarioAcumulado(float salarioAcumulado) {
+        this.salarioAcumulado = salarioAcumulado;
+    }
+
+    /**
+     * @return the tipo
+     */
+    public int getTipo() {
+        return tipo;
+    }
+
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    /**
+     * @return the produccionDiaria
+     */
+    public float getProduccionDiaria() {
+        return produccionDiaria;
+    }
+
+    /**
+     * @param produccionDiaria the produccionDiaria to set
+     */
+    public void setProduccionDiaria(float produccionDiaria) {
+        this.produccionDiaria = produccionDiaria;
+    }
+
+    /**
+     * @return the mutex
+     */
+    public Semaphore getMutex() {
+        return mutex;
+    }
+
+    /**
+     * @param mutex the mutex to set
+     */
+    public void setMutex(Semaphore mutex) {
+        this.mutex = mutex;
+    }
+
+    /**
+     * @return the progresoTrabajo
+     */
+    public float getProgresoTrabajo() {
+        return progresoTrabajo;
+    }
+
+    /**
+     * @param progresoTrabajo the progresoTrabajo to set
+     */
+    public void setProgresoTrabajo(float progresoTrabajo) {
+        this.progresoTrabajo = progresoTrabajo;
+    }
+    
+>>>>>>> Stashed changes
 }
