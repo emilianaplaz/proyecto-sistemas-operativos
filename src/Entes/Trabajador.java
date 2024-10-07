@@ -5,37 +5,37 @@
 package Entes;
 
 /**
- * @author Emiliana Plaz
- * @author Stefano Boschetti
+ *
+ * @author emilianaplaz
  */
 import Compañias.Compania;
-import static java.lang.Thread.sleep;
+
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-
-public abstract class Trabajador extends Thread{
+/**
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
+ */
+public abstract class Trabajador extends Thread {
 
     private Compania compania;
     private float salario;
     private float salarioAcumulado;
     private int tipo;
     private float produccionDiaria;
+    private float progresoTrabajo; //Progreso en su trabajo, si es menor a 1 entonces no ha termina una pieza
     private Semaphore mutex;
 
-    
-
     /*TIPOS DE TRABAJADORES:
-        Productores de placa base                    = 0            $20/h
-        Productores de CPUs                          = 1            $26/h
-        Productores de Memoria RAM                   = 2            $40/h
-        Productores de Fuente de alimentación        = 3            $16/h
-        Productores de tarjetas gráficas             = 4            $34/h
+        Productores de placa base                    = 0            $20
+        Productores de CPUs                          = 1            $26
+        Productores de Memoria RAM                   = 2            $40
+        Productores de Fuente de alimentación        = 3            $16
+        Productores de tarjetas gráficas             = 4            $34
     
-        Ensambladores                                = 5            $50/h
-        Project manager                              = 6            $40/h
-        Director                                     = 7            $60/h
+        Ensambladores                                = 5            $50
+        Project manager                              = 6            $40
+        Director                                     = 7            $60
      */
     public Trabajador(int tipo, float salario, Semaphore mutex, Compania compania) {
         this.tipo = tipo;
@@ -45,43 +45,81 @@ public abstract class Trabajador extends Thread{
         switch (tipo) {
             case 0 -> {
                 this.salario = 20;
-                this.produccionDiaria = compania.getProd_placa_base();
+                this.produccionDiaria = compania.getProdDiariaPlacaBase();
             }
             case 1 -> {
                 this.salario = 26;
-                this.produccionDiaria = compania.getProd_cpu();
+                this.produccionDiaria = compania.getProdDiariaCpu();
             }
             case 2 -> {
                 this.salario = 40;
-                this.produccionDiaria = compania.getProd_ram();
+                this.produccionDiaria = compania.getProdDiariaRam();
             }
             case 3 -> {
                 this.salario = 16;
-                this.produccionDiaria = compania.getProd_fuentes();
+                this.produccionDiaria = compania.getProdDiariaFuentes();
             }
             case 4 -> {
                 this.salario = 34;
-                this.produccionDiaria = compania.getProd_graficas();
+                this.produccionDiaria = compania.getProdDiariaGraficas();
             }
         }
     }
-    
-    public float getSalario() {
-        return salario;
-    }
 
-    
-    public void setSalario(float salario) {
-        this.salario = salario;
-    }
-        
     public Compania getCompania() {
         return compania;
     }
 
-    
     public void setCompania(Compania compania) {
         this.compania = compania;
     }
-    
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public float getSalarioAcumulado() {
+        return salarioAcumulado;
+    }
+
+    public void setSalarioAcumulado(float salarioAcumulado) {
+        this.salarioAcumulado = salarioAcumulado;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public float getProduccionDiaria() {
+        return produccionDiaria;
+    }
+
+    public void setProduccionDiaria(float produccionDiaria) {
+        this.produccionDiaria = produccionDiaria;
+    }
+
+    public float getProgresoTrabajo() {
+        return progresoTrabajo;
+    }
+
+    public void setProgresoTrabajo(float progresoTrabajo) {
+        this.progresoTrabajo = progresoTrabajo;
+    }
+
+    public Semaphore getMutex() {
+        return mutex;
+    }
+
+    public void setMutex(Semaphore mutex) {
+        this.mutex = mutex;
+    }
+
 }

@@ -10,8 +10,8 @@ import java.util.concurrent.Semaphore;
 
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
 public class ProjectManager extends Trabajador{
     

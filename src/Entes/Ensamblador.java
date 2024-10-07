@@ -4,22 +4,21 @@
  */
 package Entes;
 import Compañias.Compania;
-import Almacenes.Almacen;
 import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
 public class Ensamblador extends Trabajador{
     
     float salarioAcc;
     float acc;
     int pcEstandar = 0; //computadoras estandar ensambladas
-    int pcTarjetaGrafica = 0; //computadoras con tarjeta grafica ensambladas
+    int pcConGrafica = 0; //computadoras con tarjeta grafica ensambladas
     
     public Ensamblador(int tipo,float salario, Semaphore mutex,Compania compania) {
         super(tipo,salario, mutex,compania);

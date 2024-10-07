@@ -4,12 +4,11 @@
  */
 package Main;
 
-import Almacenes.Almacen;
 import GUI.Interfaz;
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
 public class ManejadorInterfaz {
     private static Interfaz interfaz = new Interfaz();

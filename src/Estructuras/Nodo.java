@@ -7,8 +7,8 @@ package Estructuras;
 import Entes.Trabajador;
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
 public class Nodo {
     private Trabajador element;

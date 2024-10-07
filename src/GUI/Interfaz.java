@@ -7,8 +7,8 @@ package GUI;
 import java.text.DecimalFormat;
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
 public class Interfaz extends javax.swing.JFrame {
 

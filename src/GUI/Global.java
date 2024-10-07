@@ -4,15 +4,15 @@
  */
 package GUI;
 
+import Almacen.Almacen;
 import Compañias.Compania;
-import Almacenes.Almacen;
 import FunctionsTXT.Funciones;
 import java.util.concurrent.Semaphore;
 import javax.swing.JFrame;
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
 public class Global {
    //Estas son instancias de clases estaticas. Te permiten acceder a los objetos desde cualquier clase sin inicializarlos
@@ -31,7 +31,7 @@ public class Global {
     }
     
     public static void setAlmacenApple(Almacen aAlmacenApple) {
-        almacenApple = almacenApple;
+        almacenApple = aAlmacenApple;
     }
     
     public static Almacen getAlmacenHP(){
@@ -39,7 +39,7 @@ public class Global {
     }
     
     public static void setAlmacenHP(Almacen aAlmacenHP) {
-        almacenHP = almacenHP;
+        almacenHP = aAlmacenHP;
     }
     
     public static Compania getApple(){
@@ -55,7 +55,7 @@ public class Global {
     }
     
     public static void setHP(Compania aHP) {
-        HP = HP;
+        HP = aHP;
     }
 
 
