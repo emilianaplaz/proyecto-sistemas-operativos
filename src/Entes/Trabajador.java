@@ -8,25 +8,24 @@ package Entes;
  *
  * @author emilianaplaz
  */
-import Compañia.Compañia;
-import Drive.Drive;
-import static java.lang.Thread.sleep;
+import Compañias.Compania;
+
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- *
- * @author emilianaplaz
+ * @author Stefano Boschetti
+ * @author Emiliana Plaz
  */
-public abstract class Trabajador extends Thread{
-    private Compañia compania;
+public abstract class Trabajador extends Thread {
+
+    private Compania compania;
     private float salario;
     private float salarioAcumulado;
-    private Semaphore mutex;
     private int tipo;
-    private float CantidadDeTrabajoPorDia; //esta es la cantidad que se ira acumulando a la variable ACC
-    
+    private float produccionDiaria;
+    private float progresoTrabajo; //Progreso en su trabajo, si es menor a 1 entonces no ha termina una pieza
+    private Semaphore mutex;
+
     /*TIPOS DE TRABAJADORES:
         Productores de placa base                    = 0            $20
         Productores de CPUs                          = 1            $26
@@ -37,147 +36,90 @@ public abstract class Trabajador extends Thread{
         Ensambladores                                = 5            $50
         Project manager                              = 6            $40
         Director                                     = 7            $60
-    */
-    
-    
-    public Worker(int tipo,float salario, Semaphore mutex,Company compania) {
-           this.salarioAcumulado = 0;
-           this.salario = salario;
-           this.mutex = mutex;
-           this.tipo = tipo;
-           this.compania = compania;
-           this.CantidadDeTrabajoPorDia = obtainCantidadPorDia(); //cantidad de trabajo por dia
-           
-           
-    }
-    public float obtainCantidadPorDia(){
-        Float numero_retorno = null;
-        if(this.compania.getTipoCompania() == 0){//Disney: se tomara el carnet de Kevin, ultimo numero = 4
-            if(this.getTipo() == 0){
-                numero_retorno = (float) 2.0;
-            }else if(this.getTipo() == 1){
-                numero_retorno = (float) 0.34;
-            }else if(this.getTipo() == 2){
-                numero_retorno = (float) 0.34;
-            }else if(this.getTipo() == 3){
-                numero_retorno = (float) 3.0;
-            }else if(this.getTipo() == 4){
-                numero_retorno = (float) 0.34;
-            }else if(this.getTipo() == 5){
-                numero_retorno = (float) 0.5;
-            }else if(this.getTipo() == 6){
-                numero_retorno = (float) 1.0;
-            }else if(this.getTipo() == 7){
-                numero_retorno = (float) 1;
+     */
+    public Trabajador(int tipo, float salario, Semaphore mutex, Compania compania) {
+        this.tipo = tipo;
+        this.compania = compania;
+        this.salarioAcumulado = salarioAcumulado;
+
+        switch (tipo) {
+            case 0 -> {
+                this.salario = 20;
+                this.produccionDiaria = compania.getProdDiariaPlacaBase();
             }
-        }else if(this.compania.getTipoCompania() == 1){//Cartoon network: se tomara el carnet de Diego, ultimo numero = 6
-            if(this.getTipo() == 0){
-                numero_retorno = (float) 1.0;
-            }else if(this.getTipo() == 1){
-                numero_retorno = (float) 0.25;
-            }else if(this.getTipo() == 2){
-                numero_retorno = (float) 0.25;
-            }else if(this.getTipo() == 3){
-                numero_retorno = (float) 5.0;
-            }else if(this.getTipo() == 4){
-                numero_retorno = (float) 0.34;
-            }else if(this.getTipo() == 5){
-                numero_retorno = (float) 0.5;
-            }else if(this.getTipo() == 6){
-                numero_retorno = (float) 0.5;
-            }else if(this.getTipo() == 7){
-                numero_retorno = (float) 1;
+            case 1 -> {
+                this.salario = 26;
+                this.produccionDiaria = compania.getProdDiariaCpu();
+            }
+            case 2 -> {
+                this.salario = 40;
+                this.produccionDiaria = compania.getProdDiariaRam();
+            }
+            case 3 -> {
+                this.salario = 16;
+                this.produccionDiaria = compania.getProdDiariaFuentes();
+            }
+            case 4 -> {
+                this.salario = 34;
+                this.produccionDiaria = compania.getProdDiariaGraficas();
             }
         }
-        
-        return numero_retorno;
     }
-    
-    @Override
-    public abstract void run();
 
-    /**
-     * @return the salario
-     */
+    public Compania getCompania() {
+        return compania;
+    }
+
+    public void setCompania(Compania compania) {
+        this.compania = compania;
+    }
+
     public float getSalario() {
         return salario;
     }
 
-    /**
-     * @param salario the salario to set
-     */
     public void setSalario(float salario) {
         this.salario = salario;
     }
 
-    /**
-     * @return the salarioAcumulado
-     */
     public float getSalarioAcumulado() {
         return salarioAcumulado;
     }
 
-    /**
-     * @param salarioAcumulado the salarioAcumulado to set
-     */
     public void setSalarioAcumulado(float salarioAcumulado) {
         this.salarioAcumulado = salarioAcumulado;
     }
 
-    /**
-     * @return the mutex
-     */
-    public Semaphore getMutex() {
-        return mutex;
-    }
-
-    /**
-     * @param mutex the mutex to set
-     */
-    public void setMutex(Semaphore mutex) {
-        this.mutex = mutex;
-    }
-
-    /**
-     * @return the tipo
-     */
     public int getTipo() {
         return tipo;
     }
 
-    /**
-     * @param tipo the tipo to set
-     */
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 
-    /**
-     * @return the CantidadDeTrabajoPorDia
-     */
-    public float getCantidadDeTrabajoPorDia() {
-        return CantidadDeTrabajoPorDia;
+    public float getProduccionDiaria() {
+        return produccionDiaria;
     }
 
-    /**
-     * @param CantidadDeTrabajoPorDia the CantidadDeTrabajoPorDia to set
-     */
-    public void setCantidadDeTrabajoPorDia(float CantidadDeTrabajoPorDia) {
-        this.CantidadDeTrabajoPorDia = CantidadDeTrabajoPorDia;
+    public void setProduccionDiaria(float produccionDiaria) {
+        this.produccionDiaria = produccionDiaria;
     }
 
-    /**
-     * @return the compania
-     */
-    public Company getCompania() {
-        return compania;
+    public float getProgresoTrabajo() {
+        return progresoTrabajo;
     }
 
-    /**
-     * @param compania the compania to set
-     */
-    public void setCompania(Company compania) {
-        this.compania = compania;
+    public void setProgresoTrabajo(float progresoTrabajo) {
+        this.progresoTrabajo = progresoTrabajo;
+    }
+
+    public Semaphore getMutex() {
+        return mutex;
+    }
+
+    public void setMutex(Semaphore mutex) {
+        this.mutex = mutex;
     }
 
 }
