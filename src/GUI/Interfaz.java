@@ -413,6 +413,18 @@ public class Interfaz extends javax.swing.JFrame {
         prodgraficaAppleActivos = new javax.swing.JLabel();
         ensambladoresAppleActivos = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        jButton42 = new javax.swing.JButton();
+        jButton43 = new javax.swing.JButton();
+        jButton44 = new javax.swing.JButton();
+        jButton45 = new javax.swing.JButton();
+        jButton46 = new javax.swing.JButton();
+        jButton47 = new javax.swing.JButton();
+        jButton48 = new javax.swing.JButton();
+        jButton49 = new javax.swing.JButton();
+        jButton50 = new javax.swing.JButton();
+        jButton51 = new javax.swing.JButton();
+        jButton52 = new javax.swing.JButton();
+        jButton53 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -1036,6 +1048,114 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel28.setText("Productores placa base");
         jPanel6.add(jLabel28);
         jLabel28.setBounds(20, 40, 190, 17);
+
+        jButton42.setText("-");
+        jButton42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton42ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton42);
+        jButton42.setBounds(240, 190, 30, 23);
+
+        jButton43.setText("+");
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton43);
+        jButton43.setBounds(310, 190, 30, 23);
+
+        jButton44.setText("-");
+        jButton44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton44ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton44);
+        jButton44.setBounds(240, 100, 30, 23);
+
+        jButton45.setText("-");
+        jButton45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton45ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton45);
+        jButton45.setBounds(240, 70, 30, 23);
+
+        jButton46.setText("-");
+        jButton46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton46ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton46);
+        jButton46.setBounds(240, 130, 30, 23);
+
+        jButton47.setText("-");
+        jButton47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton47ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton47);
+        jButton47.setBounds(240, 160, 30, 23);
+
+        jButton48.setText("-");
+        jButton48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton48ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton48);
+        jButton48.setBounds(240, 40, 30, 23);
+
+        jButton49.setText("+");
+        jButton49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton49ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton49);
+        jButton49.setBounds(310, 40, 30, 23);
+
+        jButton50.setText("+");
+        jButton50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton50ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton50);
+        jButton50.setBounds(310, 70, 30, 23);
+
+        jButton51.setText("+");
+        jButton51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton51ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton51);
+        jButton51.setBounds(310, 100, 30, 23);
+
+        jButton52.setText("+");
+        jButton52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton52ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton52);
+        jButton52.setBounds(310, 130, 30, 23);
+
+        jButton53.setText("+");
+        jButton53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton53ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton53);
+        jButton53.setBounds(310, 160, 30, 23);
 
         jPanel4.add(jPanel6);
         jPanel6.setBounds(30, 50, 400, 280);
@@ -1860,38 +1980,110 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHP() == true){
+            Desarrollador prodplacabaseHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo guionista
+            Global.getHP().getProdPlacaBase().insertFinal(prodplacabaseHPNuevo);//lo agregas a la lista de guionistas de cartoon network
+            prodplacabaseHPActivos.setText(Integer.toString(Global.getHP().getProdPlacaBase().getSize()));//actualizamos el label de la GUI
+            prodplacabaseHPNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores excedido");
+        }
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
         // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHP() == true){
+            Desarrollador prodcpuHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo guionista
+            Global.getHP().getProdCpu().insertFinal(prodcpuHPNuevo);//lo agregas a la lista de guionistas de cartoon network
+            prodcpuHPActivos.setText(Integer.toString(Global.getHP().getProdCpu().getSize()));//actualizamos el label de la GUI
+            prodcpuHPNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores excedido");
+        }
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
         // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHP() == true){
+            Desarrollador prodramHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear nuevo productor de ram
+            Global.getHP().getProdRam().insertFinal(prodramHPNuevo);//agregar a la lista de productores de ram de HP
+            prodramHPActivos.setText(Integer.toString(Global.getHP().getProdRam().getSize()));//actualizar el label de la GUI
+            prodramHPNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores excedido");
+        }
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHP() == true){
+            Desarrollador prodfuenteHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de fuente
+            Global.getHP().getProdFuentes().insertFinal(prodfuenteHPNuevo);//agregar a la lista de productores de fuente de hp
+            prodfuenteHPActivos.setText(Integer.toString(Global.getHP().getProdFuentes().getSize()));//actualizar el label de la GUI
+            prodfuenteHPNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores excedido");
+        }
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHP() == true){
+            Desarrollador prodgraficaHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de tarjetas graficas
+            Global.getHP().getProdGraficas().insertFinal(prodgraficaHPNuevo);//agregar a la lista de productores de tarjetas graficas de hp 
+            prodgraficaHPActivos.setText(Integer.toString(Global.getHP().getProdGraficas().getSize()));//actualizar el label de la GUI
+            prodgraficaHPNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores excedido");
+        }
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
         // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHP() == true){
+            Desarrollador ensambladorHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo ensamblador
+            Global.getHP().getProdCpu().insertFinal(ensambladorHPNuevo);//agregar a la lista de ensambladores de hp 
+            ensambladoresHPActivos.setText(Integer.toString(Global.getHP().getEnsambladores().getSize()));//actualizar el label de la GUI
+            ensambladorHPNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores excedido");
+        }
     }//GEN-LAST:event_jButton36ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
         // TODO add your handling code here:
+        if(Global.getHP().getEnsambladores().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getEnsambladores().getTail().getElement();//agarramos al ultimo guionista
+            Global.getHP().getEnsambladores().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            ensambladoresHPActivos.setText(Integer.toString(Global.getHP().getEnsambladores().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un ensamblador.Te quedarias sin ensambladores.");
+        }
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
         // TODO add your handling code here:
+        if(Global.getHP().getProdGraficas().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdGraficas().getTail().getElement();//agarramos al ultimo guionista
+            Global.getHP().getProdGraficas().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodgraficaHPActivos.setText(Integer.toString(Global.getHP().getProdGraficas().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de tarjetas graficas.Te quedarias sin productores de tarjetas graficas.");
+        }
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         // TODO add your handling code here:
+        if(Global.getHP().getProdFuentes().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdFuentes().getTail().getElement();//agarramos al ultimo guionista
+            Global.getHP().getProdFuentes().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodfuenteHPActivos.setText(Integer.toString(Global.getHP().getProdFuentes().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de fuentes.Te quedarias sin productores de fuentes.");
+        }
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
@@ -1917,6 +2109,150 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de Cpu.Te quedarias sin productores de Cpu.");
         }
     }//GEN-LAST:event_jButton41ActionPerformed
+
+    private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getApple().getEnsambladores().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getEnsambladores().getTail().getElement();//agarramos al ultimo guionista
+            Global.getApple().getEnsambladores().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            ensambladoresAppleActivos.setText(Integer.toString(Global.getApple().getEnsambladores().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un ensamblador.Te quedarias sin ensambladores.");
+        }
+    }//GEN-LAST:event_jButton42ActionPerformed
+
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorApple() == true){
+            Desarrollador ensambladorAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Global.getApple().getEnsambladores().insertFinal(ensambladorAppleNuevo);//lo agregas a la lista de guionistas de disney
+            ensambladoresAppleActivos.setText(Integer.toString(Global.getApple().getEnsambladores().getSize()));//actualizamos el label de la interfaz
+            ensambladorAppleNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Límite de trabajadores excedido");
+        }
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getApple().getProdRam().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdRam().getTail().getElement();//agarramos al ultimo guionista
+            Global.getApple().getProdRam().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodramAppleActivos.setText(Integer.toString(Global.getApple().getProdRam().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de ram.Te quedarias sin productores de ram.");
+        }
+    }//GEN-LAST:event_jButton44ActionPerformed
+
+    private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getApple().getProdCpu().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdCpu().getTail().getElement();//agarramos al ultimo guionista
+            Global.getApple().getProdCpu().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productores de cpu.Te quedarias sin productores de cpu.");
+        }
+    }//GEN-LAST:event_jButton45ActionPerformed
+
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getApple().getProdFuentes().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdFuentes().getTail().getElement();//agarramos al ultimo guionista
+            Global.getApple().getProdFuentes().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodfuenteAppleActivos.setText(Integer.toString(Global.getApple().getProdFuentes().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de fuente.Te quedarias sin productores de fuente.");
+        }
+    }//GEN-LAST:event_jButton46ActionPerformed
+
+    private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getApple().getProdGraficas().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdGraficas().getTail().getElement();//agarramos al ultimo guionista
+            Global.getApple().getProdGraficas().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodgraficaAppleActivos.setText(Integer.toString(Global.getApple().getProdGraficas().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productores de tarjeta grafica.Te quedarias sin productores de tarjeta grafica.");
+        }
+    }//GEN-LAST:event_jButton47ActionPerformed
+
+    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getApple().getProdPlacaBase().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdPlacaBase().getTail().getElement();//agarramos al ultimo guionista
+            Global.getApple().getProdPlacaBase().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodplacabaseAppleActivos.setText(Integer.toString(Global.getApple().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de placa base.Te quedarias sin productores de placa base.");
+        }
+    }//GEN-LAST:event_jButton48ActionPerformed
+
+    private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorApple() == true){
+            Desarrollador prodplacabaseAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Global.getApple().getProdPlacaBase().insertFinal(prodplacabaseAppleNuevo);//lo agregas a la lista de guionistas de disney
+            prodplacabaseAppleActivos.setText(Integer.toString(Global.getApple().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
+            prodplacabaseAppleNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Límite de trabajadores excedido");
+        }
+    }//GEN-LAST:event_jButton49ActionPerformed
+
+    private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorApple() == true){
+            Desarrollador prodcpuAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Global.getApple().getProdCpu().insertFinal(prodcpuAppleNuevo);//lo agregas a la lista de guionistas de disney
+            prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
+            prodcpuAppleNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Límite de trabajadores excedido");
+        }
+    }//GEN-LAST:event_jButton50ActionPerformed
+
+    private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorApple() == true){
+            Desarrollador prodramAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Global.getApple().getProdRam().insertFinal(prodramAppleNuevo);//lo agregas a la lista de guionistas de disney
+            prodramAppleActivos.setText(Integer.toString(Global.getApple().getProdRam().getSize()));//actualizamos el label de la interfaz
+            prodramAppleNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Límite de rtabajadores excedido");
+        }
+    }//GEN-LAST:event_jButton51ActionPerformed
+
+    private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorApple() == true){
+            Desarrollador prodfuenteAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Global.getApple().getProdFuentes().insertFinal(prodfuenteAppleNuevo);//lo agregas a la lista de guionistas de disney
+            prodfuenteAppleActivos.setText(Integer.toString(Global.getApple().getProdFuentes().getSize()));//actualizamos el label de la interfaz
+            prodfuenteAppleNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Límite de trabajadores excedido");
+        }
+    }//GEN-LAST:event_jButton52ActionPerformed
+
+    private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorApple() == true){
+            Desarrollador prodgraficaAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Global.getApple().getProdGraficas().insertFinal(prodgraficaAppleNuevo);//lo agregas a la lista de guionistas de disney
+            prodgraficaAppleActivos.setText(Integer.toString(Global.getApple().getProdGraficas().getSize()));//actualizamos el label de la interfaz
+            prodgraficaAppleNuevo.start();//lo pones a trabajar
+        }else{
+            JOptionPane.showMessageDialog(null, "Límite de trabajadores excedido");
+        }
+    }//GEN-LAST:event_jButton53ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2022,7 +2358,19 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
+    private javax.swing.JButton jButton44;
+    private javax.swing.JButton jButton45;
+    private javax.swing.JButton jButton46;
+    private javax.swing.JButton jButton47;
+    private javax.swing.JButton jButton48;
+    private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton50;
+    private javax.swing.JButton jButton51;
+    private javax.swing.JButton jButton52;
+    private javax.swing.JButton jButton53;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
