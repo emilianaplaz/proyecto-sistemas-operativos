@@ -6,7 +6,7 @@ package GUI;
 
 import Almacen.Almacen;
 import Compañias.Compania;
-import FunctionsTXT.Funciones;
+import Funciones.Funciones;
 import java.util.concurrent.Semaphore;
 import javax.swing.JFrame;
 
@@ -74,7 +74,7 @@ public class Global {
     }
 
    
-    public static void setHP(Semaphore aMutexHP) {
+    public static void setMutexHP(Semaphore aMutexHP) {
         mutexHP = aMutexHP;
     }
 
