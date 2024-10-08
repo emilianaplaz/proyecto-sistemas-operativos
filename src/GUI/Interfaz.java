@@ -508,134 +508,89 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setLayout(null);
+
         jLabel1.setText("Apple vs HP");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(376, 19, 73, 17);
 
         jLabel2.setText("DIAS:");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(24, 98, 32, 17);
 
         diasInicio.setText("0");
+        jPanel2.add(diasInicio);
+        diasInicio.setBounds(62, 98, 7, 17);
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(24, 188, 0, 0);
 
         jLabel4.setText("Apple");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(351, 121, 90, 17);
 
         jLabel5.setText("HP");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(754, 121, 40, 17);
 
         jLabel6.setText("Utilidades");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(144, 171, 59, 17);
 
         jLabel7.setText("Costos Operativos");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(144, 206, 109, 17);
 
         jLabel8.setText("Ganancias en bruto");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(144, 241, 114, 17);
 
         jLabel9.setText("Computadoras Entándar");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(144, 276, 142, 17);
 
         jLabel10.setText("Computadoras Gráficas");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(144, 311, 139, 17);
 
         utilidadesappleinicio.setText("0");
+        jPanel2.add(utilidadesappleinicio);
+        utilidadesappleinicio.setBounds(365, 171, 40, 17);
 
         operativosappleinicio.setText("0");
+        jPanel2.add(operativosappleinicio);
+        operativosappleinicio.setBounds(365, 206, 60, 17);
 
         gananciasappleinicio.setText("0");
+        jPanel2.add(gananciasappleinicio);
+        gananciasappleinicio.setBounds(365, 241, 80, 17);
 
         estandarappleinicio.setText("0");
+        jPanel2.add(estandarappleinicio);
+        estandarappleinicio.setBounds(365, 276, 30, 17);
 
         graficasappleinicio.setText("0");
+        jPanel2.add(graficasappleinicio);
+        graficasappleinicio.setBounds(365, 311, 30, 17);
 
         utilidadeshpinicio.setText("0");
+        jPanel2.add(utilidadeshpinicio);
+        utilidadeshpinicio.setBounds(754, 171, 7, 17);
 
         operativoshpinicio.setText("0");
+        jPanel2.add(operativoshpinicio);
+        operativoshpinicio.setBounds(754, 206, 7, 17);
 
         gananciashpinicio.setText("0");
+        jPanel2.add(gananciashpinicio);
+        gananciashpinicio.setBounds(754, 241, 7, 17);
 
         estandarhpinicio.setText("0");
+        jPanel2.add(estandarhpinicio);
+        estandarhpinicio.setBounds(754, 276, 7, 17);
 
         graficashpinicio.setText("0");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(376, 376, 376)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(diasInicio))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addGap(79, 79, 79)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(utilidadesappleinicio)
-                            .addComponent(operativosappleinicio)
-                            .addComponent(gananciasappleinicio)
-                            .addComponent(estandarappleinicio)
-                            .addComponent(graficasappleinicio)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(351, 351, 351)
-                        .addComponent(jLabel4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(utilidadeshpinicio)
-                    .addComponent(jLabel5)
-                    .addComponent(operativoshpinicio)
-                    .addComponent(gananciashpinicio)
-                    .addComponent(estandarhpinicio)
-                    .addComponent(graficashpinicio))
-                .addGap(74, 74, 74))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(utilidadesappleinicio)
-                        .addComponent(utilidadeshpinicio))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(diasInicio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel3)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(operativosappleinicio)
-                    .addComponent(operativoshpinicio))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(gananciasappleinicio)
-                    .addComponent(gananciashpinicio))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(estandarappleinicio)
-                    .addComponent(estandarhpinicio))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(graficasappleinicio)
-                    .addComponent(graficashpinicio))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel2.add(graficashpinicio);
+        graficashpinicio.setBounds(754, 311, 7, 17);
 
         jTabbedPane2.addTab("Home", jPanel2);
 
@@ -1380,13 +1335,11 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
         );
 
         pack();

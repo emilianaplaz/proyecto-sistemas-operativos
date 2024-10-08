@@ -4,6 +4,23 @@
  */
 package Main;
 
+
+import Compañias.Compania;
+import Almacen.Almacen;
+import Estructuras.Nodo;
+import Entes.Ensamblador;
+import Entes.Desarrollador;
+import Entes.ProjectManager;
+import Entes.Trabajador;
+import Entes.Director;
+import java.util.concurrent.Semaphore;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import GUI.Global;
+import GUI.Grafico;
+
+
 /**
  * @author Stefano Boschetti
  * @author Emiliana Plaz
@@ -19,6 +36,36 @@ public class ProyectoSO {
         //homepage.setVisible(true); 
         
         ManejadorInterfaz.getInterfaz().show();
+        
+         //Creamos la compania Disney y la cargamos a Global
+        Compania apple = new Compania(Global.getAlmacenApple(),0);
+        Global.setApple(apple);
+        //Creamos la compania Cartoon Network y la cargamos a Global
+        Compania hp = new Compania(Global.getAlmacenHP(),1);
+        Global.setHP(hp);
+        
+        //Creamos los semaforos y los cargamos  a Global
+        Semaphore mutexApple = new Semaphore(1);
+        Semaphore mutexHP = new Semaphore(1);
+        Global.setMutexHP(mutexHP);
+        Global.setMutexApple(mutexApple);
+        
+        Global.getFunciones().leer_txt();
+        
+        
+        //Creamos y ponemos a trabjar los PM de ambas empresas
+        ProjectManager pm = new ProjectManager(6,40,mutexApple,       Global.getApple());
+        ProjectManager pm2 = new ProjectManager(6,40,mutexApple,Global.getHP());
+        pm.start();
+        pm2.start();
+        
+        //Creamos y ponemos a trabjar los DIRECTORES de ambas empresas
+        Director directorDisney = new Director(7,60,mutexApple,Global.getApple());
+        directorDisney.start();
+        Director directorCN = new Director(7,60,mutexHP,Global.getHP());
+        directorCN.start();
+        
+        //Global.getGrafico().start();
     }
     
 }
