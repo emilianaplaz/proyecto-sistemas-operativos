@@ -100,36 +100,36 @@ public class Almacen {
         switch (trabajador.getTipo()) {
             case 0 -> {
                 if (this.getPlacasBase() < this.getplacasBaseMax()) { // El almacen no esta lleno.
-                    if (this.getPlacasBase() + trabajador.getProgresoTrabajo() > this.getplacasBaseMax()) {
+                    if (this.getPlacasBase() + trabajador.getProgresoActual() > this.getplacasBaseMax()) {
                         // Si hay piezas de más se "descartan" y se marca el almacen como si estuviera al maximo.
                         this.setPlacasBase(this.getplacasBaseMax(), trabajador.getCompania().getTipoCompania());
                     } else {
                         // Si hay espacio simplemente se suman las piezas.
-                        this.setPlacasBase((int) (this.getPlacasBase() + trabajador.getProgresoTrabajo()), trabajador.getCompania().getTipoCompania());
+                        this.setPlacasBase((int) (this.getPlacasBase() + trabajador.getProgresoActual()), trabajador.getCompania().getTipoCompania());
                     }
                 }
             }
 
             case 1 -> {
                 if (this.getCpu() < this.getcpuMax()) { // El almacen no esta lleno.
-                    if (this.getCpu() + trabajador.getProgresoTrabajo() > this.getcpuMax()) {
+                    if (this.getCpu() + trabajador.getProgresoActual() > this.getcpuMax()) {
                         // Si hay piezas de más se "descartan" y se marca el almacen como si estuviera al maximo.
                         this.setCpu(this.getcpuMax(), trabajador.getCompania().getTipoCompania());
                     } else {
                         // Si hay espacio simplemente se suman las piezas.
-                        this.setCpu((int) (this.getCpu() + trabajador.getProgresoTrabajo()), trabajador.getCompania().getTipoCompania());
+                        this.setCpu((int) (this.getCpu() + trabajador.getProgresoActual()), trabajador.getCompania().getTipoCompania());
                     }
                 }
             }
 
             case 2 -> {
                 if (this.getRam() < this.getramMax()) { // El almacen no esta lleno.
-                    if (this.getRam() + trabajador.getProgresoTrabajo() > this.getramMax()) {
+                    if (this.getRam() + trabajador.getProgresoActual() > this.getramMax()) {
                         // Si hay piezas de más se "descartan" y se marca el almacen como si estuviera al maximo.
                         this.setRam(this.getramMax(), trabajador.getCompania().getTipoCompania());
                     } else {
                         // Si hay espacio simplemente se suman las piezas.
-                        this.setRam((int) (this.getRam() + trabajador.getProgresoTrabajo()), trabajador.getCompania().getTipoCompania());
+                        this.setRam((int) (this.getRam() + trabajador.getProgresoActual()), trabajador.getCompania().getTipoCompania());
                     }
                 }
 
@@ -137,24 +137,24 @@ public class Almacen {
 
             case 3 -> {
                 if (this.getFuentes() < this.getfuentesMax()) { // El almacen no esta lleno.
-                    if (this.getFuentes() + trabajador.getProgresoTrabajo() > this.getfuentesMax()) {
+                    if (this.getFuentes() + trabajador.getProgresoActual() > this.getfuentesMax()) {
                         // Si hay piezas de más se "descartan" y se marca el almacen como si estuviera al maximo.
                         this.setFuentes(this.getfuentesMax(), trabajador.getCompania().getTipoCompania());
                     } else {
                         // Si hay espacio simplemente se suman las piezas.
-                        this.setFuentes((int) (this.getFuentes() + trabajador.getProgresoTrabajo()), trabajador.getCompania().getTipoCompania());
+                        this.setFuentes((int) (this.getFuentes() + trabajador.getProgresoActual()), trabajador.getCompania().getTipoCompania());
                     }
                 }
             }
 
             case 4 -> {
                 if (this.getGraficas() < this.getgraficasMax()) { // El almacen no esta lleno.
-                    if (this.getGraficas() + trabajador.getProgresoTrabajo() > this.getgraficasMax()) {
+                    if (this.getGraficas() + trabajador.getProgresoActual() > this.getgraficasMax()) {
                         // Si hay piezas de más se "descartan" y se marca el almacen como si estuviera al maximo.
                         this.setGraficas(this.getgraficasMax(), trabajador.getCompania().getTipoCompania());
                     } else {
                         // Si hay espacio simplemente se suman las piezas.
-                        this.setGraficas((int) (this.getGraficas() + trabajador.getProgresoTrabajo()), trabajador.getCompania().getTipoCompania());
+                        this.setGraficas((int) (this.getGraficas() + trabajador.getProgresoActual()), trabajador.getCompania().getTipoCompania());
                     }
                 }
             }
