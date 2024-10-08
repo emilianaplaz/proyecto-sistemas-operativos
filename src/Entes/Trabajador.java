@@ -3,13 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Entes;
-
-/**
- *
- * @author emilianaplaz
- */
 import Compañias.Compania;
-
 import java.util.concurrent.Semaphore;
 
 /**
@@ -23,7 +17,6 @@ public abstract class Trabajador extends Thread {
     private float salarioAcumulado;
     private int tipo;
     private float produccionDiaria;
-    private float progresoTrabajo; //Progreso en su trabajo, si es menor a 1 entonces no ha termina una pieza
     private Semaphore mutex;
 
     /*TIPOS DE TRABAJADORES:
@@ -40,7 +33,7 @@ public abstract class Trabajador extends Thread {
     public Trabajador(int tipo, float salario, Semaphore mutex, Compania compania) {
         this.tipo = tipo;
         this.compania = compania;
-        this.salarioAcumulado = salarioAcumulado;
+        this.salarioAcumulado = 0;
 
         switch (tipo) {
             case 0 -> {
@@ -62,6 +55,18 @@ public abstract class Trabajador extends Thread {
             case 4 -> {
                 this.salario = 34;
                 this.produccionDiaria = compania.getProdDiariaGraficas();
+            }
+            case 5 -> {
+                this.salario = 50;
+                this.produccionDiaria = 1/2;
+            }
+            case 6 -> {
+                this.salario = 40;
+                this.produccionDiaria = 1;
+            }
+            case 7 -> {
+                this.salario = 60;
+                this.produccionDiaria = 1;
             }
         }
     }
@@ -105,15 +110,6 @@ public abstract class Trabajador extends Thread {
     public void setProduccionDiaria(float produccionDiaria) {
         this.produccionDiaria = produccionDiaria;
     }
-
-    public float getProgresoTrabajo() {
-        return progresoTrabajo;
-    }
-
-    public void setProgresoTrabajo(float progresoTrabajo) {
-        this.progresoTrabajo = progresoTrabajo;
-    }
-
     public Semaphore getMutex() {
         return mutex;
     }

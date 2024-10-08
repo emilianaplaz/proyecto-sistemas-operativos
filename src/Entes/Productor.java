@@ -11,8 +11,8 @@ import java.util.logging.Logger;
  * @author Emiliana Plaz
  */
 public class Productor extends Trabajador{
-    float salarioAcc;
-    float progresoActual;
+    private float salarioAcc;
+    private float progresoActual;
     
     public Productor(int tipo,float salario, Semaphore mutex, Compania compania) {
         super(tipo,salario, mutex,compania);
@@ -36,7 +36,7 @@ public class Productor extends Trabajador{
     }
     
     public void obtainSalary(){
-        this.salarioAcc += this.getSalario()*24;
+        this.setSalarioAcc(this.getSalarioAcc() + this.getSalario()*24);
         try {
             this.getCompania().getAlmacen().getSalarioAccMutex().acquire(); //wait
             this.getCompania().getAlmacen().addSalary(this.getTipo(), this.getSalario()*24,this.getCompania().getTipoCompania());
@@ -48,17 +48,33 @@ public class Productor extends Trabajador{
 
     
     public void work(){
-        this.progresoActual += this.getProgresoTrabajo();
+        this.setProgresoActual(this.getProgresoActual() + this.getProduccionDiaria());
             try {
-                if (this.progresoActual >= 1){
+                if (this.getProgresoActual() >= 1){
                     this.getMutex().acquire(); //wait
                     this.getCompania().getAlmacen().addPart(this);//Espacio critico
                     this.getMutex().release();// signal
-                    this.progresoActual = 0;
+                    this.setProgresoActual(0);
                 }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
             } 
         
+    }
+
+    public float getSalarioAcc() {
+        return salarioAcc;
+    }
+
+    public void setSalarioAcc(float salarioAcc) {
+        this.salarioAcc = salarioAcc;
+    }
+
+    public float getProgresoActual() {
+        return progresoActual;
+    }
+
+    public void setProgresoActual(float progresoActual) {
+        this.progresoActual = progresoActual;
     }
 }

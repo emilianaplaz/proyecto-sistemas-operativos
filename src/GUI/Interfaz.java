@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import Entes.Desarrollador;
+import Entes.Productor;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -1969,7 +1969,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         if(Global.getHP().getProdPlacaBase().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdPlacaBase().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getHP().getProdPlacaBase().getTail().getElement();//agarramos al ultimo guionista
             Global.getHP().getProdPlacaBase().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodplacabaseHPActivos.setText(Integer.toString(Global.getHP().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
@@ -1981,7 +1981,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Desarrollador prodplacabaseHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo guionista
+            Productor prodplacabaseHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo guionista
             Global.getHP().getProdPlacaBase().insertFinal(prodplacabaseHPNuevo);//lo agregas a la lista de guionistas de cartoon network
             prodplacabaseHPActivos.setText(Integer.toString(Global.getHP().getProdPlacaBase().getSize()));//actualizamos el label de la GUI
             prodplacabaseHPNuevo.start();//lo pones a trabajar
@@ -1993,7 +1993,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Desarrollador prodcpuHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo guionista
+            Productor prodcpuHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo guionista
             Global.getHP().getProdCpu().insertFinal(prodcpuHPNuevo);//lo agregas a la lista de guionistas de cartoon network
             prodcpuHPActivos.setText(Integer.toString(Global.getHP().getProdCpu().getSize()));//actualizamos el label de la GUI
             prodcpuHPNuevo.start();//lo pones a trabajar
@@ -2005,7 +2005,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Desarrollador prodramHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear nuevo productor de ram
+            Productor prodramHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear nuevo productor de ram
             Global.getHP().getProdRam().insertFinal(prodramHPNuevo);//agregar a la lista de productores de ram de HP
             prodramHPActivos.setText(Integer.toString(Global.getHP().getProdRam().getSize()));//actualizar el label de la GUI
             prodramHPNuevo.start();//lo pones a trabajar
@@ -2017,7 +2017,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Desarrollador prodfuenteHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de fuente
+            Productor prodfuenteHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de fuente
             Global.getHP().getProdFuentes().insertFinal(prodfuenteHPNuevo);//agregar a la lista de productores de fuente de hp
             prodfuenteHPActivos.setText(Integer.toString(Global.getHP().getProdFuentes().getSize()));//actualizar el label de la GUI
             prodfuenteHPNuevo.start();//lo pones a trabajar
@@ -2029,7 +2029,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Desarrollador prodgraficaHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de tarjetas graficas
+            Productor prodgraficaHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de tarjetas graficas
             Global.getHP().getProdGraficas().insertFinal(prodgraficaHPNuevo);//agregar a la lista de productores de tarjetas graficas de hp 
             prodgraficaHPActivos.setText(Integer.toString(Global.getHP().getProdGraficas().getSize()));//actualizar el label de la GUI
             prodgraficaHPNuevo.start();//lo pones a trabajar
@@ -2041,7 +2041,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Desarrollador ensambladorHPNuevo = new Desarrollador(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo ensamblador
+            Productor ensambladorHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo ensamblador
             Global.getHP().getProdCpu().insertFinal(ensambladorHPNuevo);//agregar a la lista de ensambladores de hp 
             ensambladoresHPActivos.setText(Integer.toString(Global.getHP().getEnsambladores().getSize()));//actualizar el label de la GUI
             ensambladorHPNuevo.start();//lo pones a trabajar
@@ -2053,7 +2053,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
         // TODO add your handling code here:
         if(Global.getHP().getEnsambladores().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getEnsambladores().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getHP().getEnsambladores().getTail().getElement();//agarramos al ultimo guionista
             Global.getHP().getEnsambladores().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             ensambladoresHPActivos.setText(Integer.toString(Global.getHP().getEnsambladores().getSize()));//actualizamos el label de la interfaz
@@ -2065,7 +2065,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
         // TODO add your handling code here:
         if(Global.getHP().getProdGraficas().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdGraficas().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getHP().getProdGraficas().getTail().getElement();//agarramos al ultimo guionista
             Global.getHP().getProdGraficas().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodgraficaHPActivos.setText(Integer.toString(Global.getHP().getProdGraficas().getSize()));//actualizamos el label de la interfaz
@@ -2077,7 +2077,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         // TODO add your handling code here:
         if(Global.getHP().getProdFuentes().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdFuentes().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getHP().getProdFuentes().getTail().getElement();//agarramos al ultimo guionista
             Global.getHP().getProdFuentes().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodfuenteHPActivos.setText(Integer.toString(Global.getHP().getProdFuentes().getSize()));//actualizamos el label de la interfaz
@@ -2089,7 +2089,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
         // TODO add your handling code here:
         if(Global.getHP().getProdRam().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdRam().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getHP().getProdRam().getTail().getElement();//agarramos al ultimo guionista
             Global.getHP().getProdRam().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodramHPActivos.setText(Integer.toString(Global.getHP().getProdRam().getSize()));//actualizamos el label de la interfaz
@@ -2101,7 +2101,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
         // TODO add your handling code here:
         if(Global.getHP().getProdCpu().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdCpu().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getHP().getProdCpu().getTail().getElement();//agarramos al ultimo guionista
             Global.getHP().getProdCpu().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodcpuHPActivos.setText(Integer.toString(Global.getHP().getProdCpu().getSize()));//actualizamos el label de la interfaz
@@ -2113,7 +2113,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getEnsambladores().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getEnsambladores().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getApple().getEnsambladores().getTail().getElement();//agarramos al ultimo guionista
             Global.getApple().getEnsambladores().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             ensambladoresAppleActivos.setText(Integer.toString(Global.getApple().getEnsambladores().getSize()));//actualizamos el label de la interfaz
@@ -2125,7 +2125,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Desarrollador ensambladorAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Productor ensambladorAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
             Global.getApple().getEnsambladores().insertFinal(ensambladorAppleNuevo);//lo agregas a la lista de guionistas de disney
             ensambladoresAppleActivos.setText(Integer.toString(Global.getApple().getEnsambladores().getSize()));//actualizamos el label de la interfaz
             ensambladorAppleNuevo.start();//lo pones a trabajar
@@ -2137,7 +2137,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getProdRam().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdRam().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getApple().getProdRam().getTail().getElement();//agarramos al ultimo guionista
             Global.getApple().getProdRam().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodramAppleActivos.setText(Integer.toString(Global.getApple().getProdRam().getSize()));//actualizamos el label de la interfaz
@@ -2149,7 +2149,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getProdCpu().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdCpu().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getApple().getProdCpu().getTail().getElement();//agarramos al ultimo guionista
             Global.getApple().getProdCpu().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
@@ -2161,7 +2161,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getProdFuentes().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdFuentes().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getApple().getProdFuentes().getTail().getElement();//agarramos al ultimo guionista
             Global.getApple().getProdFuentes().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodfuenteAppleActivos.setText(Integer.toString(Global.getApple().getProdFuentes().getSize()));//actualizamos el label de la interfaz
@@ -2173,7 +2173,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getProdGraficas().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdGraficas().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getApple().getProdGraficas().getTail().getElement();//agarramos al ultimo guionista
             Global.getApple().getProdGraficas().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodgraficaAppleActivos.setText(Integer.toString(Global.getApple().getProdGraficas().getSize()));//actualizamos el label de la interfaz
@@ -2185,7 +2185,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getProdPlacaBase().getSize() > 1){
-            Desarrollador trabajadorDespedido = (Desarrollador) Global.getApple().getProdPlacaBase().getTail().getElement();//agarramos al ultimo guionista
+            Productor trabajadorDespedido = (Productor) Global.getApple().getProdPlacaBase().getTail().getElement();//agarramos al ultimo guionista
             Global.getApple().getProdPlacaBase().deleteFinal();//eliminamos al ultimo guionista
             trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
             prodplacabaseAppleActivos.setText(Integer.toString(Global.getApple().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
@@ -2197,7 +2197,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Desarrollador prodplacabaseAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Productor prodplacabaseAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
             Global.getApple().getProdPlacaBase().insertFinal(prodplacabaseAppleNuevo);//lo agregas a la lista de guionistas de disney
             prodplacabaseAppleActivos.setText(Integer.toString(Global.getApple().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
             prodplacabaseAppleNuevo.start();//lo pones a trabajar
@@ -2209,7 +2209,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Desarrollador prodcpuAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Productor prodcpuAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
             Global.getApple().getProdCpu().insertFinal(prodcpuAppleNuevo);//lo agregas a la lista de guionistas de disney
             prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
             prodcpuAppleNuevo.start();//lo pones a trabajar
@@ -2221,7 +2221,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Desarrollador prodramAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Productor prodramAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
             Global.getApple().getProdRam().insertFinal(prodramAppleNuevo);//lo agregas a la lista de guionistas de disney
             prodramAppleActivos.setText(Integer.toString(Global.getApple().getProdRam().getSize()));//actualizamos el label de la interfaz
             prodramAppleNuevo.start();//lo pones a trabajar
@@ -2233,7 +2233,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Desarrollador prodfuenteAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Productor prodfuenteAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
             Global.getApple().getProdFuentes().insertFinal(prodfuenteAppleNuevo);//lo agregas a la lista de guionistas de disney
             prodfuenteAppleActivos.setText(Integer.toString(Global.getApple().getProdFuentes().getSize()));//actualizamos el label de la interfaz
             prodfuenteAppleNuevo.start();//lo pones a trabajar
@@ -2245,7 +2245,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Desarrollador prodgraficaAppleNuevo = new Desarrollador(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
+            Productor prodgraficaAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
             Global.getApple().getProdGraficas().insertFinal(prodgraficaAppleNuevo);//lo agregas a la lista de guionistas de disney
             prodgraficaAppleActivos.setText(Integer.toString(Global.getApple().getProdGraficas().getSize()));//actualizamos el label de la interfaz
             prodgraficaAppleNuevo.start();//lo pones a trabajar

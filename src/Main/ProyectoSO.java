@@ -9,7 +9,6 @@ import Compañias.Compania;
 import Almacen.Almacen;
 import Estructuras.Nodo;
 import Entes.Ensamblador;
-import Entes.Desarrollador;
 import Entes.ProjectManager;
 import Entes.Trabajador;
 import Entes.Director;

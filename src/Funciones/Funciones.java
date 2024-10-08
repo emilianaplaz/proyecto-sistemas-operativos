@@ -8,7 +8,6 @@ import Estructuras.ListaDoble;
 import Main.ManejadorInterfaz;
 import GUI.Global;
 import Entes.Ensamblador;
-import Entes.Desarrollador;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

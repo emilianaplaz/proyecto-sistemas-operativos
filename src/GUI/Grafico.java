@@ -4,7 +4,6 @@
  */
 package GUI;
 
-import Entes.Desarrollador;
 import static java.lang.Thread.sleep;
 import java.util.Random;
 import java.util.logging.Level;
