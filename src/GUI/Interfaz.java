@@ -4,7 +4,9 @@
  */
 package GUI;
 
+import Entes.Desarrollador;
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /**
  * @author Stefano Boschetti
@@ -370,7 +372,6 @@ public class Interfaz extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
@@ -391,6 +392,12 @@ public class Interfaz extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
@@ -464,6 +471,18 @@ public class Interfaz extends javax.swing.JFrame {
         prodfuenteHPActivos = new javax.swing.JLabel();
         prodgraficaHPActivos = new javax.swing.JLabel();
         ensambladoresHPActivos = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+        jButton35 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
+        jButton37 = new javax.swing.JButton();
+        jButton38 = new javax.swing.JButton();
+        jButton39 = new javax.swing.JButton();
+        jButton40 = new javax.swing.JButton();
+        jButton41 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -530,27 +549,27 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel5.setText("HP");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(754, 121, 40, 17);
+        jLabel5.setBounds(721, 121, 50, 17);
 
         jLabel6.setText("Utilidades");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(144, 171, 59, 17);
+        jLabel6.setBounds(100, 180, 120, 17);
 
         jLabel7.setText("Costos Operativos");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(144, 206, 109, 17);
+        jLabel7.setBounds(100, 210, 150, 17);
 
         jLabel8.setText("Ganancias en bruto");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(144, 241, 114, 17);
+        jLabel8.setBounds(100, 240, 150, 17);
 
         jLabel9.setText("Computadoras Entándar");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(144, 276, 142, 17);
+        jLabel9.setBounds(100, 280, 170, 17);
 
         jLabel10.setText("Computadoras Gráficas");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(144, 311, 139, 17);
+        jLabel10.setBounds(100, 310, 170, 17);
 
         utilidadesappleinicio.setText("0");
         jPanel2.add(utilidadesappleinicio);
@@ -574,23 +593,23 @@ public class Interfaz extends javax.swing.JFrame {
 
         utilidadeshpinicio.setText("0");
         jPanel2.add(utilidadeshpinicio);
-        utilidadeshpinicio.setBounds(754, 171, 7, 17);
+        utilidadeshpinicio.setBounds(731, 171, 30, 17);
 
         operativoshpinicio.setText("0");
         jPanel2.add(operativoshpinicio);
-        operativoshpinicio.setBounds(754, 206, 7, 17);
+        operativoshpinicio.setBounds(731, 206, 30, 17);
 
         gananciashpinicio.setText("0");
         jPanel2.add(gananciashpinicio);
-        gananciashpinicio.setBounds(754, 241, 7, 17);
+        gananciashpinicio.setBounds(731, 241, 30, 17);
 
         estandarhpinicio.setText("0");
         jPanel2.add(estandarhpinicio);
-        estandarhpinicio.setBounds(754, 276, 7, 17);
+        estandarhpinicio.setBounds(731, 276, 30, 17);
 
         graficashpinicio.setText("0");
         jPanel2.add(graficashpinicio);
-        graficashpinicio.setBounds(754, 311, 7, 17);
+        graficashpinicio.setBounds(731, 311, 30, 17);
 
         jTabbedPane2.addTab("Home", jPanel2);
 
@@ -603,107 +622,137 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel12.setText("Productors placa base");
         jPanel3.add(jLabel12);
-        jLabel12.setBounds(32, 152, 132, 17);
+        jLabel12.setBounds(32, 152, 180, 17);
 
         jLabel13.setText("Productores CPU");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(30, 190, 100, 17);
+        jLabel13.setBounds(30, 190, 140, 17);
 
         jLabel14.setText("Productores RAM");
         jPanel3.add(jLabel14);
-        jLabel14.setBounds(32, 222, 102, 17);
+        jLabel14.setBounds(32, 222, 140, 17);
 
         jLabel15.setText("Productores fuentes de energía");
         jPanel3.add(jLabel15);
-        jLabel15.setBounds(32, 257, 182, 17);
+        jLabel15.setBounds(32, 257, 210, 17);
 
         jLabel16.setText("Productores tarjeta gráfica");
         jPanel3.add(jLabel16);
-        jLabel16.setBounds(32, 292, 153, 17);
+        jLabel16.setBounds(32, 292, 200, 17);
 
         jLabel17.setText("Ensambladores");
         jPanel3.add(jLabel17);
-        jLabel17.setBounds(32, 327, 91, 17);
+        jLabel17.setBounds(32, 327, 150, 17);
 
         jLabel18.setText("Apple");
         jPanel3.add(jLabel18);
-        jLabel18.setBounds(350, 90, 34, 17);
+        jLabel18.setBounds(350, 90, 70, 17);
 
         jLabel19.setText("HP");
         jPanel3.add(jLabel19);
-        jLabel19.setBounds(503, 89, 17, 17);
+        jLabel19.setBounds(580, 90, 60, 17);
 
-        prodplacabaseApple.setText("0");
+        prodplacabaseApple.setText("1");
         jPanel3.add(prodplacabaseApple);
-        prodplacabaseApple.setBounds(358, 152, 7, 17);
+        prodplacabaseApple.setBounds(370, 150, 50, 17);
 
-        prodcpuApple.setText("0");
+        prodcpuApple.setText("1");
         jPanel3.add(prodcpuApple);
-        prodcpuApple.setBounds(360, 190, 7, 17);
+        prodcpuApple.setBounds(370, 190, 50, 17);
 
-        prodramApple.setText("0");
+        prodramApple.setText("1");
         jPanel3.add(prodramApple);
-        prodramApple.setBounds(358, 222, 7, 17);
+        prodramApple.setBounds(370, 220, 50, 17);
 
-        prodfuenteApple.setText("0");
+        prodfuenteApple.setText("1");
         jPanel3.add(prodfuenteApple);
-        prodfuenteApple.setBounds(358, 257, 7, 17);
+        prodfuenteApple.setBounds(370, 260, 50, 17);
 
-        prodgraficaApple.setText("0");
+        prodgraficaApple.setText("1");
         jPanel3.add(prodgraficaApple);
-        prodgraficaApple.setBounds(358, 292, 7, 17);
+        prodgraficaApple.setBounds(370, 290, 50, 17);
 
-        ensambladoresApple.setText("0");
+        ensambladoresApple.setText("1");
         jPanel3.add(ensambladoresApple);
-        ensambladoresApple.setBounds(358, 327, 7, 17);
+        ensambladoresApple.setBounds(370, 330, 50, 17);
 
-        prodplacabaseHP.setText("0");
+        prodplacabaseHP.setText("1");
         jPanel3.add(prodplacabaseHP);
-        prodplacabaseHP.setBounds(510, 150, 16, 17);
+        prodplacabaseHP.setBounds(580, 140, 40, 17);
 
-        prodcpuHP.setText("0");
+        prodcpuHP.setText("1");
         jPanel3.add(prodcpuHP);
-        prodcpuHP.setBounds(510, 190, 49, 17);
+        prodcpuHP.setBounds(580, 180, 49, 17);
 
-        prodramHP.setText("0");
+        prodramHP.setText("1");
         jPanel3.add(prodramHP);
-        prodramHP.setBounds(510, 220, 7, 17);
+        prodramHP.setBounds(580, 220, 40, 17);
 
-        prodfuenteHP.setText("0");
+        prodfuenteHP.setText("1");
         jPanel3.add(prodfuenteHP);
-        prodfuenteHP.setBounds(510, 260, 7, 17);
+        prodfuenteHP.setBounds(580, 260, 40, 17);
 
-        prodgraficaHP.setText("0");
+        prodgraficaHP.setText("1");
         jPanel3.add(prodgraficaHP);
-        prodgraficaHP.setBounds(510, 290, 7, 17);
+        prodgraficaHP.setBounds(580, 290, 30, 17);
 
-        ensambladoresHP.setText("0");
+        ensambladoresHP.setText("1");
         jPanel3.add(ensambladoresHP);
-        ensambladoresHP.setBounds(510, 320, 7, 17);
+        ensambladoresHP.setBounds(580, 320, 60, 17);
 
         jButton1.setText("+");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton1);
-        jButton1.setBounds(380, 320, 30, 23);
+        jButton1.setBounds(400, 320, 30, 23);
 
         jButton2.setText("+");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton2);
-        jButton2.setBounds(540, 320, 30, 23);
+        jButton2.setBounds(620, 320, 30, 23);
 
         jButton3.setText("+");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton3);
-        jButton3.setBounds(380, 190, 30, 23);
+        jButton3.setBounds(400, 190, 30, 23);
 
         jButton4.setText("+");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton4);
-        jButton4.setBounds(380, 220, 30, 23);
+        jButton4.setBounds(400, 220, 30, 23);
 
         jButton5.setText("+");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton5);
-        jButton5.setBounds(380, 250, 30, 23);
+        jButton5.setBounds(400, 250, 30, 23);
 
         jButton6.setText("+");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton6);
-        jButton6.setBounds(380, 290, 30, 23);
+        jButton6.setBounds(400, 290, 30, 23);
 
         jButton7.setText("-");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -714,29 +763,50 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel3.add(jButton7);
         jButton7.setBounds(520, 380, 30, 23);
 
-        jButton8.setText("+");
-        jPanel3.add(jButton8);
-        jButton8.setBounds(540, 150, 30, 23);
-
-        jButton9.setText("+");
+        jButton9.setText("-");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton9);
-        jButton9.setBounds(540, 150, 30, 23);
+        jButton9.setBounds(520, 320, 30, 23);
 
         jButton10.setText("+");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton10);
-        jButton10.setBounds(540, 190, 30, 23);
+        jButton10.setBounds(620, 180, 30, 23);
 
         jButton11.setText("+");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton11);
-        jButton11.setBounds(540, 220, 30, 23);
+        jButton11.setBounds(620, 220, 30, 23);
 
         jButton12.setText("+");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton12);
-        jButton12.setBounds(540, 260, 30, 23);
+        jButton12.setBounds(620, 260, 30, 23);
 
         jButton13.setText("+");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton13);
-        jButton13.setBounds(540, 290, 30, 23);
+        jButton13.setBounds(620, 290, 30, 23);
 
         jLabel60.setText("Duración de días en segundos");
         jPanel3.add(jLabel60);
@@ -747,10 +817,20 @@ public class Interfaz extends javax.swing.JFrame {
         duracionDias.setBounds(260, 380, 7, 17);
 
         jButton14.setText("+");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton14);
-        jButton14.setBounds(380, 150, 30, 23);
+        jButton14.setBounds(400, 150, 30, 23);
 
         jButton15.setText("+");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton15);
         jButton15.setBounds(590, 380, 30, 23);
 
@@ -769,9 +849,14 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton16);
-        jButton16.setBounds(320, 320, 30, 23);
+        jButton16.setBounds(310, 320, 30, 23);
 
         jButton17.setText("+");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton17);
         jButton17.setBounds(280, 380, 30, 23);
 
@@ -791,7 +876,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton19);
-        jButton19.setBounds(320, 150, 30, 23);
+        jButton19.setBounds(310, 150, 30, 23);
 
         jButton20.setText("-");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -800,7 +885,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton20);
-        jButton20.setBounds(320, 190, 30, 23);
+        jButton20.setBounds(310, 190, 30, 23);
 
         jButton21.setText("-");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -809,7 +894,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton21);
-        jButton21.setBounds(320, 220, 30, 23);
+        jButton21.setBounds(310, 220, 30, 23);
 
         jButton22.setText("-");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -818,7 +903,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton22);
-        jButton22.setBounds(320, 250, 30, 23);
+        jButton22.setBounds(310, 250, 30, 23);
 
         jButton23.setText("-");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -827,11 +912,70 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton23);
-        jButton23.setBounds(320, 290, 30, 23);
+        jButton23.setBounds(310, 290, 30, 23);
 
         jButton24.setText("GUARDAR");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton24);
         jButton24.setBounds(550, 30, 100, 23);
+
+        jButton25.setText("+");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton25);
+        jButton25.setBounds(620, 140, 30, 23);
+
+        jButton26.setText("-");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton26);
+        jButton26.setBounds(520, 140, 30, 23);
+
+        jButton27.setText("-");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton27);
+        jButton27.setBounds(520, 180, 30, 23);
+
+        jButton28.setText("-");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton28);
+        jButton28.setBounds(520, 220, 30, 23);
+
+        jButton29.setText("-");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton29);
+        jButton29.setBounds(520, 260, 30, 23);
+
+        jButton30.setText("-");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton30);
+        jButton30.setBounds(520, 290, 30, 23);
 
         jTabbedPane2.addTab("Config", jPanel3);
 
@@ -847,54 +991,54 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel22.setText("Productores CPU");
         jPanel6.add(jLabel22);
-        jLabel22.setBounds(20, 70, 100, 17);
+        jLabel22.setBounds(20, 70, 150, 17);
 
         jLabel23.setText("Productores RAM");
         jPanel6.add(jLabel23);
-        jLabel23.setBounds(20, 100, 102, 17);
+        jLabel23.setBounds(20, 100, 140, 17);
 
         jLabel24.setText("Productores fuentes de energia");
         jPanel6.add(jLabel24);
-        jLabel24.setBounds(20, 130, 182, 17);
+        jLabel24.setBounds(20, 130, 210, 17);
 
         jLabel25.setText("Productores tarjeta gráfica");
         jPanel6.add(jLabel25);
-        jLabel25.setBounds(20, 160, 153, 17);
+        jLabel25.setBounds(20, 160, 180, 17);
 
         jLabel26.setText("Ensambladores");
         jPanel6.add(jLabel26);
-        jLabel26.setBounds(20, 190, 91, 17);
+        jLabel26.setBounds(20, 190, 140, 17);
 
         prodplacabaseAppleActivos.setText("0");
         jPanel6.add(prodplacabaseAppleActivos);
-        prodplacabaseAppleActivos.setBounds(230, 40, 7, 17);
+        prodplacabaseAppleActivos.setBounds(280, 40, 50, 17);
 
         prodcpuAppleActivos.setText("0");
         jPanel6.add(prodcpuAppleActivos);
-        prodcpuAppleActivos.setBounds(230, 70, 7, 17);
+        prodcpuAppleActivos.setBounds(280, 70, 50, 17);
 
         prodramAppleActivos.setText("0");
         jPanel6.add(prodramAppleActivos);
-        prodramAppleActivos.setBounds(230, 100, 7, 17);
+        prodramAppleActivos.setBounds(280, 100, 50, 17);
 
         prodfuenteAppleActivos.setText("0");
         jPanel6.add(prodfuenteAppleActivos);
-        prodfuenteAppleActivos.setBounds(230, 130, 7, 17);
+        prodfuenteAppleActivos.setBounds(280, 130, 50, 17);
 
         prodgraficaAppleActivos.setText("0");
         jPanel6.add(prodgraficaAppleActivos);
-        prodgraficaAppleActivos.setBounds(230, 160, 7, 17);
+        prodgraficaAppleActivos.setBounds(280, 160, 50, 17);
 
         ensambladoresAppleActivos.setText("0");
         jPanel6.add(ensambladoresAppleActivos);
-        ensambladoresAppleActivos.setBounds(230, 190, 7, 17);
+        ensambladoresAppleActivos.setBounds(280, 190, 50, 17);
 
         jLabel28.setText("Productores placa base");
         jPanel6.add(jLabel28);
-        jLabel28.setBounds(20, 40, 150, 17);
+        jLabel28.setBounds(20, 40, 190, 17);
 
         jPanel4.add(jPanel6);
-        jPanel6.setBounds(30, 30, 280, 220);
+        jPanel6.setBounds(30, 50, 400, 280);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(null);
@@ -945,7 +1089,7 @@ public class Interfaz extends javax.swing.JFrame {
         graficasApple.setBounds(190, 160, 7, 17);
 
         jPanel4.add(jPanel7);
-        jPanel7.setBounds(320, 30, 250, 220);
+        jPanel7.setBounds(440, 50, 380, 280);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(null);
@@ -980,7 +1124,7 @@ public class Interfaz extends javax.swing.JFrame {
         gananciasApple.setBounds(160, 100, 7, 17);
 
         jPanel4.add(jPanel8);
-        jPanel8.setBounds(30, 260, 230, 140);
+        jPanel8.setBounds(30, 340, 260, 160);
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(null);
@@ -1015,7 +1159,7 @@ public class Interfaz extends javax.swing.JFrame {
         salarioDescontadoApple.setBounds(140, 100, 7, 17);
 
         jPanel4.add(jPanel9);
-        jPanel9.setBounds(270, 260, 220, 140);
+        jPanel9.setBounds(300, 340, 270, 160);
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setLayout(null);
@@ -1060,7 +1204,7 @@ public class Interfaz extends javax.swing.JFrame {
         pcgraficasListasApple.setBounds(170, 100, 49, 17);
 
         jPanel4.add(jPanel12);
-        jPanel12.setBounds(500, 260, 200, 140);
+        jPanel12.setBounds(580, 340, 240, 160);
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setLayout(null);
@@ -1084,7 +1228,7 @@ public class Interfaz extends javax.swing.JFrame {
         diasApple.setBounds(50, 160, 7, 17);
 
         jPanel4.add(jPanel16);
-        jPanel16.setBounds(580, 30, 120, 220);
+        jPanel16.setBounds(830, 210, 140, 290);
 
         jTabbedPane2.addTab("Apple", jPanel4);
 
@@ -1124,30 +1268,138 @@ public class Interfaz extends javax.swing.JFrame {
 
         prodplacabaseHPActivos.setText("0");
         jPanel17.add(prodplacabaseHPActivos);
-        prodplacabaseHPActivos.setBounds(240, 50, 7, 17);
+        prodplacabaseHPActivos.setBounds(270, 50, 40, 17);
 
         prodcpuHPActivos.setText("0");
         jPanel17.add(prodcpuHPActivos);
-        prodcpuHPActivos.setBounds(240, 80, 7, 17);
+        prodcpuHPActivos.setBounds(270, 80, 40, 17);
 
         prodramHPActivos.setText("0");
         jPanel17.add(prodramHPActivos);
-        prodramHPActivos.setBounds(240, 110, 7, 17);
+        prodramHPActivos.setBounds(270, 110, 40, 17);
 
         prodfuenteHPActivos.setText("0");
         jPanel17.add(prodfuenteHPActivos);
-        prodfuenteHPActivos.setBounds(240, 140, 7, 17);
+        prodfuenteHPActivos.setBounds(270, 140, 40, 17);
 
         prodgraficaHPActivos.setText("0");
         jPanel17.add(prodgraficaHPActivos);
-        prodgraficaHPActivos.setBounds(240, 170, 7, 17);
+        prodgraficaHPActivos.setBounds(270, 170, 40, 17);
 
         ensambladoresHPActivos.setText("0");
         jPanel17.add(ensambladoresHPActivos);
-        ensambladoresHPActivos.setBounds(240, 200, 7, 17);
+        ensambladoresHPActivos.setBounds(270, 200, 40, 17);
+
+        jButton8.setText("-");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton8);
+        jButton8.setBounds(230, 50, 30, 23);
+
+        jButton31.setText("+");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton31);
+        jButton31.setBounds(290, 50, 30, 23);
+
+        jButton32.setText("+");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton32);
+        jButton32.setBounds(290, 80, 30, 23);
+
+        jButton33.setText("+");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton33);
+        jButton33.setBounds(290, 110, 30, 23);
+
+        jButton34.setText("+");
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton34);
+        jButton34.setBounds(290, 140, 30, 23);
+
+        jButton35.setText("+");
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton35);
+        jButton35.setBounds(290, 170, 30, 23);
+
+        jButton36.setText("+");
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton36);
+        jButton36.setBounds(290, 200, 30, 23);
+
+        jButton37.setText("-");
+        jButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton37ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton37);
+        jButton37.setBounds(230, 200, 30, 23);
+
+        jButton38.setText("-");
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton38ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton38);
+        jButton38.setBounds(230, 170, 30, 23);
+
+        jButton39.setText("-");
+        jButton39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton39ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton39);
+        jButton39.setBounds(230, 140, 30, 23);
+
+        jButton40.setText("-");
+        jButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton40ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton40);
+        jButton40.setBounds(230, 110, 30, 23);
+
+        jButton41.setText("-");
+        jButton41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton41ActionPerformed(evt);
+            }
+        });
+        jPanel17.add(jButton41);
+        jButton41.setBounds(230, 80, 30, 23);
 
         jPanel5.add(jPanel17);
-        jPanel17.setBounds(30, 20, 300, 230);
+        jPanel17.setBounds(30, 40, 380, 280);
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setLayout(null);
@@ -1159,46 +1411,46 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel45.setText("Placas base");
         jPanel11.add(jLabel45);
-        jLabel45.setBounds(20, 50, 90, 17);
+        jLabel45.setBounds(20, 50, 130, 17);
 
         jLabel46.setText("CPU");
         jPanel11.add(jLabel46);
-        jLabel46.setBounds(20, 80, 26, 17);
+        jLabel46.setBounds(20, 80, 70, 17);
 
         jLabel47.setText("RAM");
         jPanel11.add(jLabel47);
-        jLabel47.setBounds(20, 110, 28, 17);
+        jLabel47.setBounds(20, 110, 70, 17);
 
         jLabel48.setText("Fuentes de energía");
         jPanel11.add(jLabel48);
-        jLabel48.setBounds(20, 140, 111, 17);
+        jLabel48.setBounds(20, 140, 150, 17);
 
         jLabel49.setText("Tarjetas gráficas");
         jPanel11.add(jLabel49);
-        jLabel49.setBounds(20, 170, 96, 17);
+        jLabel49.setBounds(20, 170, 140, 17);
 
         placasbaseHP.setText("0");
         jPanel11.add(placasbaseHP);
-        placasbaseHP.setBounds(180, 50, 7, 17);
+        placasbaseHP.setBounds(230, 50, 50, 17);
 
         cpuHP.setText("0");
         jPanel11.add(cpuHP);
-        cpuHP.setBounds(180, 80, 7, 17);
+        cpuHP.setBounds(230, 80, 50, 17);
 
         ramHP.setText("0");
         jPanel11.add(ramHP);
-        ramHP.setBounds(180, 110, 7, 17);
+        ramHP.setBounds(230, 110, 50, 17);
 
         fuentesHP.setText("0");
         jPanel11.add(fuentesHP);
-        fuentesHP.setBounds(180, 140, 7, 17);
+        fuentesHP.setBounds(230, 140, 50, 17);
 
         graficasHP.setText("0");
         jPanel11.add(graficasHP);
-        graficasHP.setBounds(180, 170, 7, 17);
+        graficasHP.setBounds(230, 170, 50, 17);
 
         jPanel5.add(jPanel11);
-        jPanel11.setBounds(340, 20, 230, 230);
+        jPanel11.setBounds(430, 40, 380, 280);
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setLayout(null);
@@ -1233,7 +1485,7 @@ public class Interfaz extends javax.swing.JFrame {
         gananciasHP.setBounds(160, 100, 7, 17);
 
         jPanel5.add(jPanel13);
-        jPanel13.setBounds(30, 260, 240, 140);
+        jPanel13.setBounds(30, 340, 330, 160);
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setLayout(null);
@@ -1268,7 +1520,7 @@ public class Interfaz extends javax.swing.JFrame {
         salarioDescontadoHP.setBounds(140, 110, 7, 17);
 
         jPanel5.add(jPanel14);
-        jPanel14.setBounds(280, 260, 210, 140);
+        jPanel14.setBounds(370, 340, 290, 160);
 
         jPanel15.setBackground(new java.awt.Color(255, 255, 255));
         jPanel15.setLayout(null);
@@ -1303,7 +1555,7 @@ public class Interfaz extends javax.swing.JFrame {
         pcgraficasListasHP.setBounds(170, 100, 49, 17);
 
         jPanel5.add(jPanel15);
-        jPanel15.setBounds(500, 260, 210, 140);
+        jPanel15.setBounds(680, 340, 300, 160);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -1327,7 +1579,7 @@ public class Interfaz extends javax.swing.JFrame {
         diasHP.setBounds(50, 180, 7, 17);
 
         jPanel5.add(jPanel1);
-        jPanel1.setBounds(580, 20, 140, 230);
+        jPanel1.setBounds(820, 40, 160, 290);
 
         jTabbedPane2.addTab("HP", jPanel5);
 
@@ -1335,11 +1587,11 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 995, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
         );
 
         pack();
@@ -1347,35 +1599,324 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        if(Integer.parseInt(diasEntrega.getText()) > 1){
+            diasEntrega.setText(Integer.toString(Integer.parseInt(diasEntrega.getText()) - 1));
+        }else{
+            JOptionPane.showMessageDialog(null, "La duracion de dias no puede ser 0");
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
+         if(Integer.parseInt(ensambladoresApple.getText()) > 1){
+            ensambladoresApple.setText(Integer.toString(Integer.parseInt(ensambladoresApple.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
+        if(Integer.parseInt(duracionDias.getText()) > 1){
+            duracionDias.setText(Integer.toString(Integer.parseInt(duracionDias.getText()) - 1));
+        }else{
+            JOptionPane.showMessageDialog(null, "La duracion de dias no puede ser 0");
+        }
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
+         if(Integer.parseInt(prodplacabaseApple.getText()) > 1){
+            prodplacabaseApple.setText(Integer.toString(Integer.parseInt(prodplacabaseApple.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
+         if(Integer.parseInt(prodcpuApple.getText()) > 1){
+            prodcpuApple.setText(Integer.toString(Integer.parseInt(prodcpuApple.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
+         if(Integer.parseInt(prodramApple.getText()) > 1){
+            prodramApple.setText(Integer.toString(Integer.parseInt(prodramApple.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
+         if(Integer.parseInt(prodfuenteApple.getText()) > 1){
+            prodfuenteApple.setText(Integer.toString(Integer.parseInt(prodfuenteApple.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
+         if(Integer.parseInt(prodgraficaApple.getText()) > 1){
+            prodgraficaApple.setText(Integer.toString(Integer.parseInt(prodgraficaApple.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
     }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(ensambladoresHP.getText()) > 1){
+            ensambladoresHP.setText(Integer.toString(Integer.parseInt(ensambladoresHP.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        } 
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(prodplacabaseHP.getText()) > 1){
+            prodplacabaseHP.setText(Integer.toString(Integer.parseInt(prodplacabaseHP.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(prodcpuHP.getText()) > 1){
+            prodcpuHP.setText(Integer.toString(Integer.parseInt(prodcpuHP.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        }
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(prodramHP.getText()) > 1){
+            prodramHP.setText(Integer.toString(Integer.parseInt(prodramHP.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(prodfuenteHP.getText()) > 1){
+            prodfuenteHP.setText(Integer.toString(Integer.parseInt(prodfuenteHP.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        // TODO add your handling code here:
+        if(Integer.parseInt(prodgraficaHP.getText()) > 1){
+            prodgraficaHP.setText(Integer.toString(Integer.parseInt(prodgraficaHP.getText())-1));
+        }else{
+            JOptionPane.showMessageDialog(null, "Tienes que tener al menos 1 trabajador de cada tipo");
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHPEnDatosIniciales() == true){
+            prodplacabaseHP.setText(Integer.toString(Integer.parseInt(prodplacabaseHP.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para HP es 15");
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHPEnDatosIniciales() == true){
+            prodcpuHP.setText(Integer.toString(Integer.parseInt(prodcpuHP.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para HP es 15");
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHPEnDatosIniciales() == true){
+            prodramHP.setText(Integer.toString(Integer.parseInt(prodramHP.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para HP es 15");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHPEnDatosIniciales() == true){
+            prodfuenteHP.setText(Integer.toString(Integer.parseInt(prodfuenteHP.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para HP es 15");
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHPEnDatosIniciales() == true){
+            prodgraficaHP.setText(Integer.toString(Integer.parseInt(prodgraficaHP.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para HP es 15");
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if(this.permisoDeAumentoDeTrabajadorHPEnDatosIniciales() == true){
+            ensambladoresHP.setText(Integer.toString(Integer.parseInt(ensambladoresHP.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para HP es 15");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+         if(this.permisoDeAumentoDeTrabajadorAppleEnDatosIniciales() == true){
+            prodplacabaseApple.setText(Integer.toString(Integer.parseInt(prodplacabaseApple.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para Apple es 18");
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+          if(this.permisoDeAumentoDeTrabajadorAppleEnDatosIniciales() == true){
+            prodcpuApple.setText(Integer.toString(Integer.parseInt(prodcpuApple.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para Apple es 18");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+          if(this.permisoDeAumentoDeTrabajadorAppleEnDatosIniciales() == true){
+            prodramApple.setText(Integer.toString(Integer.parseInt(prodramApple.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para Apple es 18");
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+          if(this.permisoDeAumentoDeTrabajadorAppleEnDatosIniciales() == true){
+            prodfuenteApple.setText(Integer.toString(Integer.parseInt(prodfuenteApple.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para Apple es 18");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+          if(this.permisoDeAumentoDeTrabajadorAppleEnDatosIniciales() == true){
+            prodgraficaApple.setText(Integer.toString(Integer.parseInt(prodgraficaApple.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para Apple es 18");
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+          if(this.permisoDeAumentoDeTrabajadorAppleEnDatosIniciales() == true){
+            ensambladoresApple.setText(Integer.toString(Integer.parseInt(ensambladoresApple.getText())+1));
+        }else{
+            JOptionPane.showMessageDialog(null, "El maximo de trabajadores para Apple es 18");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        duracionDias.setText(Integer.toString(Integer.parseInt(duracionDias.getText()) + 1));
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        diasEntrega.setText(Integer.toString(Integer.parseInt(diasEntrega.getText()) + 1));
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        // TODO add your handling code here:
+        Global.getFunciones().escribir_txt();
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getHP().getProdPlacaBase().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdPlacaBase().getTail().getElement();//agarramos al ultimo guionista
+            Global.getHP().getProdPlacaBase().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodplacabaseHPActivos.setText(Integer.toString(Global.getHP().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de placa base.Te quedarias sin productores de placa base.");
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton36ActionPerformed
+
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton37ActionPerformed
+
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton38ActionPerformed
+
+    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton39ActionPerformed
+
+    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getHP().getProdRam().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdRam().getTail().getElement();//agarramos al ultimo guionista
+            Global.getHP().getProdRam().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodramHPActivos.setText(Integer.toString(Global.getHP().getProdRam().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un prodictores de ram.Te quedarias sin productores de ram.");
+        }
+    }//GEN-LAST:event_jButton40ActionPerformed
+
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+        // TODO add your handling code here:
+        if(Global.getHP().getProdCpu().getSize() > 1){
+            Desarrollador trabajadorDespedido = (Desarrollador) Global.getHP().getProdCpu().getTail().getElement();//agarramos al ultimo guionista
+            Global.getHP().getProdCpu().deleteFinal();//eliminamos al ultimo guionista
+            trabajadorDespedido.stop();//detenemos el hilo del ultimo guionista
+            prodcpuHPActivos.setText(Integer.toString(Global.getHP().getProdCpu().getSize()));//actualizamos el label de la interfaz
+        }else{
+            JOptionPane.showMessageDialog(null, "No puedes despedir un productor de Cpu.Te quedarias sin productores de Cpu.");
+        }
+    }//GEN-LAST:event_jButton41ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1462,8 +2003,25 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
+    private javax.swing.JButton jButton38;
+    private javax.swing.JButton jButton39;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton40;
+    private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
