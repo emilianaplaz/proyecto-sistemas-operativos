@@ -154,6 +154,7 @@ public class Almacen {
                         this.setGraficas(this.getgraficasMax(), trabajador.getCompania().getTipoCompania());
                     } else {
                         // Si hay espacio simplemente se suman las piezas.
+                        
                         this.setGraficas((int) (this.getGraficas() + trabajador.getProgresoActual()), trabajador.getCompania().getTipoCompania());
                     }
                 }

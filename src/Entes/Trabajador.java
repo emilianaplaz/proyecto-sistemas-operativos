@@ -35,7 +35,7 @@ public abstract class Trabajador extends Thread {
         Project manager                              = 6            $40
         Director                                     = 7            $60
      */
-    public Trabajador(int tipo, float salario, Semaphore mutex, Compania compania) {
+    public Trabajador(int tipo, Semaphore mutex, Compania compania) {
         this.tipo = tipo;
         this.compania = compania;
         this.salarioAcumulado = 0;

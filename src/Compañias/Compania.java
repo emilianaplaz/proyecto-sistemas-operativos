@@ -65,7 +65,7 @@ public class Compania {
     public int cantidadTrabajadores() {
         int respuesta = getEnsambladores().getSize()
                 + getProdPlacaBase().getSize()
-                + getProdPlacaBase().getSize()
+                + getProdCpu().getSize()
                 + getProdRam().getSize()
                 + getProdFuentes().getSize()
                 + getProdGraficas().getSize();
