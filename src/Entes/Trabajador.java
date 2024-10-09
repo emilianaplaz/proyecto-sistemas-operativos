@@ -17,12 +17,12 @@ import java.util.logging.Logger;
  */
 public abstract class Trabajador extends Thread {
 
-    private Compania compania;
-    private float salario;
-    private float salarioAcumulado;
-    private int tipo;
-    private float produccionDiaria;
-    private Semaphore mutex;
+    protected Compania compania;
+    protected float salario;
+    protected float salarioAcumulado;
+    protected int tipo;
+    protected float produccionDiaria;
+    protected Semaphore mutex;
 
     /*TIPOS DE TRABAJADORES:
         Productores de placa base                    = 0            $20
@@ -63,7 +63,7 @@ public abstract class Trabajador extends Thread {
             }
             case 5 -> {
                 this.salario = 50;
-                this.produccionDiaria = 1/2;
+                this.produccionDiaria = (float) 1/2;
             }
             case 6 -> {
                 this.salario = 40;

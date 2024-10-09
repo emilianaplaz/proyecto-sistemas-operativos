@@ -16,6 +16,7 @@ public class Productor extends Trabajador{
     
     public Productor(int tipo,float salario, Semaphore mutex, Compania compania) {
         super(tipo,salario, mutex,compania);
+        this.mutex = mutex;
         this.salarioAcc = 0;
         this.progresoActual = 0;
     }

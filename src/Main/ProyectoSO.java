@@ -64,6 +64,12 @@ public class ProyectoSO {
         Director directorHP = new Director(7,60,mutexHP,Global.getHP());
         directorHP.start();
         
+        // CREAMOS UN TRABAJADOR de cada empresa.
+        
+        
+        
+        
+        
         //Global.getGrafico().start();
     }
     

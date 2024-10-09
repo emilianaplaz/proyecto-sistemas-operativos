@@ -34,11 +34,12 @@ public class Compania {
     }
 
     public Compania(Almacen almacen, int companyType) {
+        this.duracionDia = 6000;
         this.tipoCompania = companyType;
         this.almacen = almacen;
         this.utilidades = 0;
         this.ensambladores = new ListaDoble();
-        this.prodPlacaBase = new ListaDoble();
+        this.prodCpu = new ListaDoble();
         this.prodPlacaBase = new ListaDoble();
         this.prodRam = new ListaDoble();
         this.prodFuentes = new ListaDoble();
