@@ -119,33 +119,33 @@ public class Funciones {
                     for (int i = 0; i < 6; i++) {
                         if(i == 0){ 
                             for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                Productor animadorNuevo = new Productor(0,40,Global.getMutexApple(),Global.getApple());
-                                animadorNuevo.start();
-                                Global.getApple().getProdPlacaBase().insertFinal(animadorNuevo);
+                                Productor prodplacabaseNuevo = new Productor(0,40,Global.getMutexApple(),Global.getApple());
+                                prodplacabaseNuevo.start();
+                                Global.getApple().getProdPlacaBase().insertFinal(prodplacabaseNuevo);
                             }
                         }else if(i == 1){
                             for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                Productor guionistaNuevo = new Productor(1,20,Global.getMutexApple(),Global.getApple());
-                                guionistaNuevo.start();
-                                Global.getApple().getProdCpu().insertFinal(guionistaNuevo);
+                                Productor prodcpuNuevo = new Productor(1,20,Global.getMutexApple(),Global.getApple());
+                                prodcpuNuevo.start();
+                                Global.getApple().getProdCpu().insertFinal(prodcpuNuevo);
                             }
                         }else if(i == 2){
                             for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                Productor disEscenariosNuevo = new Productor(2,26,Global.getMutexApple(),Global.getApple());
-                                disEscenariosNuevo.start();
-                                Global.getApple().getProdRam().insertFinal(disEscenariosNuevo);
+                                Productor prodramNuevo = new Productor(2,26,Global.getMutexApple(),Global.getApple());
+                                prodramNuevo.start();
+                                Global.getApple().getProdRam().insertFinal(prodramNuevo);
                             }
                         }else if(i == 3){
                             for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                Productor actorDoblajeNuevo = new Productor(3,16,Global.getMutexApple(),Global.getApple());
-                                actorDoblajeNuevo.start();
-                                Global.getApple().getProdFuentes().insertFinal(actorDoblajeNuevo);
+                                Productor prodfuenteNuevo = new Productor(3,16,Global.getMutexApple(),Global.getApple());
+                                prodfuenteNuevo.start();
+                                Global.getApple().getProdFuentes().insertFinal(prodfuenteNuevo);
                             }
                         }else if(i == 4){
                             for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                Productor pttNuevo = new Productor(4,34,Global.getMutexApple(),Global.getApple());
-                                pttNuevo.start();
-                                Global.getApple().getProdGraficas().insertFinal(pttNuevo);
+                                Productor prodgraficaNuevo = new Productor(4,34,Global.getMutexApple(),Global.getApple());
+                                prodgraficaNuevo.start();
+                                Global.getApple().getProdGraficas().insertFinal(prodgraficaNuevo);
                             }
                         }else if(i == 5){
                             for (int j = 0; j < Integer.parseInt(apple[i]); j++) {

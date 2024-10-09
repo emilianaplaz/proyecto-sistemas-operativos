@@ -543,15 +543,15 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel1.setText("Apple vs HP");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(376, 19, 73, 17);
+        jLabel1.setBounds(430, 30, 220, 17);
 
         jLabel2.setText("DIAS:");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(24, 98, 32, 17);
+        jLabel2.setBounds(24, 98, 80, 17);
 
         diasInicio.setText("0");
         jPanel2.add(diasInicio);
-        diasInicio.setBounds(62, 98, 7, 17);
+        diasInicio.setBounds(130, 100, 90, 17);
         jPanel2.add(jLabel3);
         jLabel3.setBounds(24, 188, 0, 0);
 
@@ -1332,11 +1332,11 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel72.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel72.setText("Dias para entrega");
         jPanel16.add(jLabel72);
-        jLabel72.setBounds(6, 6, 109, 17);
+        jLabel72.setBounds(6, 6, 130, 17);
 
         diasEntregaApple.setText("0");
         jPanel16.add(diasEntregaApple);
-        diasEntregaApple.setBounds(40, 60, 7, 17);
+        diasEntregaApple.setBounds(40, 60, 50, 17);
 
         jLabel74.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel74.setText("Dias");
@@ -1345,7 +1345,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         diasApple.setText("0");
         jPanel16.add(diasApple);
-        diasApple.setBounds(50, 160, 7, 17);
+        diasApple.setBounds(50, 160, 40, 17);
 
         jPanel4.add(jPanel16);
         jPanel16.setBounds(830, 210, 140, 290);
@@ -1687,7 +1687,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         diasEntregaHP.setText("0");
         jPanel1.add(diasEntregaHP);
-        diasEntregaHP.setBounds(60, 60, 20, 17);
+        diasEntregaHP.setBounds(60, 60, 40, 17);
 
         jLabel70.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel70.setText("Dias");
@@ -1696,7 +1696,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         diasHP.setText("0");
         jPanel1.add(diasHP);
-        diasHP.setBounds(50, 180, 7, 17);
+        diasHP.setBounds(50, 180, 50, 17);
 
         jPanel5.add(jPanel1);
         jPanel1.setBounds(820, 40, 160, 290);
