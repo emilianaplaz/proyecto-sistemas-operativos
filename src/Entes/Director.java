@@ -93,12 +93,12 @@ public class Director extends Trabajador {
             this.getMutex().acquire();
             this.getCompania().getAlmacen().getSalarioAccMutex().acquire();
             float ganancias = 0;
-            if (this.getCompania().getTipoCompania() == 0) {
-                ganancias = (this.getCompania().getAlmacen().getPcEstandar() * 250000) + (this.getCompania().getAlmacen().getPcConGrafica() * 600000);
+            if (this.getCompania().getTipoCompania() == 0) { // APPLE
+                ganancias = (this.getCompania().getAlmacen().getPcEstandar() * 100000) + (this.getCompania().getAlmacen().getPcConGrafica() * 150000);
                 this.getCompania().getAlmacen().setGanancias(this.getCompania().getAlmacen().getGanancias() + ganancias, this.getCompania().getTipoCompania());
                 this.getCompania().getAlmacen().setUtilidades(this.getCompania().getAlmacen().getUtilidades() + ganancias, this.getCompania().getTipoCompania());
-            } else if (this.getCompania().getTipoCompania() == 1) {
-                ganancias = (this.getCompania().getAlmacen().getPcEstandar() * 300000) + (this.getCompania().getAlmacen().getPcConGrafica() * 650000);
+            } else if (this.getCompania().getTipoCompania() == 1) { // HP
+                ganancias = (this.getCompania().getAlmacen().getPcEstandar() * 90000) + (this.getCompania().getAlmacen().getPcConGrafica() * 180000);
                 this.getCompania().getAlmacen().setGanancias(this.getCompania().getAlmacen().getGanancias() + ganancias, this.getCompania().getTipoCompania());
                 this.getCompania().getAlmacen().setUtilidades(this.getCompania().getAlmacen().getUtilidades() + ganancias, this.getCompania().getTipoCompania());
             }
