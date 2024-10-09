@@ -17,8 +17,8 @@ public class ProjectManager extends Trabajador{
     
     private float salarioAcumulado = this.getSalario() * 24;
     
-    public ProjectManager(int tipo, float salario, Semaphore mutex, Compania compania) {
-        super(tipo, salario, mutex, compania);
+    public ProjectManager(int tipo, Semaphore mutex, Compania compania) {
+        super(tipo, mutex, compania);
     }
     
     public void run() {

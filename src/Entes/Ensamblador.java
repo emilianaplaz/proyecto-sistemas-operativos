@@ -20,9 +20,10 @@ public class Ensamblador extends Trabajador {
     int pcEstandar = 0; //computadoras estandar ensambladas
     int pcConGrafica = 0; //computadoras con tarjeta grafica ensambladas
     int contadorPcTemp = 0; // Computadoras estandar para llevar la cuenta de cuando crear una grafica.
+    public boolean despedido = false;
 
-    public Ensamblador(int tipo, float salario, Semaphore mutex, Compania compania) {
-        super(tipo, salario, mutex, compania);
+    public Ensamblador(int tipo, Semaphore mutex, Compania compania) {
+        super(tipo, mutex, compania);
         this.mutex = mutex;
         this.acc = 0;
     }
@@ -31,6 +32,9 @@ public class Ensamblador extends Trabajador {
     public void run() {
         while (true) {
             try {
+                if(this.despedido){
+                        break;
+                }
                 obtainSalary();
                 work();
                 //System.out.println("Trabajador: "+ this.name + " gana: "+this.salaryAcc+"$");

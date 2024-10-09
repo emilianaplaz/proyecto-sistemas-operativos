@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Entes.Ensamblador;
 import Entes.Productor;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
@@ -215,11 +216,19 @@ public class Interfaz extends javax.swing.JFrame {
     }
     
     //DATOS DE CONFIGURACION
+    public void setDuracionDias(String duracion){
+        duracionDias.setText(duracion);
+    }
+    
     public String getDuracionDias(){
         return duracionDias.getText();
     }
     public String getDiasEntrega(){
         return diasEntrega.getText();
+    }
+    
+    public void setDiasEntrega(String dias){
+        diasEntrega.setText(dias);
     }
     
     
@@ -638,23 +647,23 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel22.setText("Productores CPU");
         jPanel6.add(jLabel22);
-        jLabel22.setBounds(20, 70, 150, 16);
+        jLabel22.setBounds(20, 70, 200, 16);
 
         jLabel23.setText("Productores RAM");
         jPanel6.add(jLabel23);
-        jLabel23.setBounds(20, 100, 140, 16);
+        jLabel23.setBounds(20, 100, 200, 16);
 
         jLabel24.setText("Productores fuentes de energia");
         jPanel6.add(jLabel24);
-        jLabel24.setBounds(20, 130, 210, 16);
+        jLabel24.setBounds(20, 130, 200, 16);
 
         jLabel25.setText("Productores tarjeta gráfica");
         jPanel6.add(jLabel25);
-        jLabel25.setBounds(20, 160, 180, 16);
+        jLabel25.setBounds(20, 160, 200, 16);
 
         jLabel26.setText("Ensambladores");
         jPanel6.add(jLabel26);
-        jLabel26.setBounds(20, 190, 140, 16);
+        jLabel26.setBounds(20, 190, 200, 16);
 
         prodplacabaseAppleActivos.setText("0");
         jPanel6.add(prodplacabaseAppleActivos);
@@ -682,7 +691,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel28.setText("Productores placa base");
         jPanel6.add(jLabel28);
-        jLabel28.setBounds(20, 40, 190, 16);
+        jLabel28.setBounds(20, 40, 200, 16);
 
         jButton42.setBackground(new java.awt.Color(204, 204, 204));
         jButton42.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -837,7 +846,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel27.setText("Capacidad del Almacen");
         jPanel7.add(jLabel27);
-        jLabel27.setBounds(20, 10, 150, 18);
+        jLabel27.setBounds(110, 10, 260, 18);
 
         jLabel21.setText("Placa base");
         jPanel7.add(jLabel21);
@@ -888,7 +897,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel61.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel61.setText("Estadísticas");
         jPanel8.add(jLabel61);
-        jLabel61.setBounds(79, 6, 80, 18);
+        jLabel61.setBounds(90, 10, 130, 18);
 
         jLabel62.setText("Costos operativos");
         jPanel8.add(jLabel62);
@@ -923,7 +932,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel33.setText("Project Manager");
         jPanel9.add(jLabel33);
-        jLabel33.setBounds(50, 10, 110, 18);
+        jLabel33.setBounds(80, 10, 160, 18);
 
         jLabel34.setText("Actividad");
         jPanel9.add(jLabel34);
@@ -1003,7 +1012,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel72.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel72.setText("Dias para entrega");
         jPanel16.add(jLabel72);
-        jLabel72.setBounds(6, 6, 130, 18);
+        jLabel72.setBounds(10, 10, 130, 18);
 
         diasEntregaApple.setText("0");
         jPanel16.add(diasEntregaApple);
@@ -1035,27 +1044,27 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel38.setText("Productores placa base");
         jPanel17.add(jLabel38);
-        jLabel38.setBounds(20, 50, 140, 16);
+        jLabel38.setBounds(20, 50, 190, 16);
 
         jLabel39.setText("Productores CPU");
         jPanel17.add(jLabel39);
-        jLabel39.setBounds(20, 80, 90, 16);
+        jLabel39.setBounds(20, 80, 190, 16);
 
         jLabel40.setText("Productores RAM");
         jPanel17.add(jLabel40);
-        jLabel40.setBounds(20, 110, 93, 16);
+        jLabel40.setBounds(20, 110, 190, 16);
 
         jLabel41.setText("Productores fuentes de energía");
         jPanel17.add(jLabel41);
-        jLabel41.setBounds(20, 140, 164, 16);
+        jLabel41.setBounds(20, 140, 190, 16);
 
         jLabel42.setText("Productores tarjetas gráficas");
         jPanel17.add(jLabel42);
-        jLabel42.setBounds(20, 170, 149, 16);
+        jLabel42.setBounds(20, 170, 190, 16);
 
         jLabel43.setText("Ensambladores");
         jPanel17.add(jLabel43);
-        jLabel43.setBounds(20, 200, 80, 16);
+        jLabel43.setBounds(20, 200, 190, 16);
 
         prodplacabaseHPActivos.setText("0");
         jPanel17.add(prodplacabaseHPActivos);
@@ -1234,7 +1243,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel44.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel44.setText("Capacidad del Almacen");
         jPanel11.add(jLabel44);
-        jLabel44.setBounds(40, 10, 150, 18);
+        jLabel44.setBounds(110, 10, 250, 18);
 
         jLabel45.setText("Placas base");
         jPanel11.add(jLabel45);
@@ -1285,15 +1294,15 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel76.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel76.setText("Estadísticas");
         jPanel13.add(jLabel76);
-        jLabel76.setBounds(79, 6, 80, 18);
+        jLabel76.setBounds(120, 10, 150, 18);
 
         jLabel77.setText("Costos operativos");
         jPanel13.add(jLabel77);
-        jLabel77.setBounds(20, 40, 94, 16);
+        jLabel77.setBounds(20, 40, 120, 16);
 
         jLabel78.setText("Utilidades");
         jPanel13.add(jLabel78);
-        jLabel78.setBounds(20, 70, 52, 16);
+        jLabel78.setBounds(20, 70, 130, 16);
 
         jLabel79.setText("Ganancia en bruto");
         jPanel13.add(jLabel79);
@@ -1320,19 +1329,19 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel50.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel50.setText("Project Manager");
         jPanel14.add(jLabel50);
-        jLabel50.setBounds(40, 10, 110, 18);
+        jLabel50.setBounds(90, 10, 160, 18);
 
         jLabel51.setText("Actividad");
         jPanel14.add(jLabel51);
-        jLabel51.setBounds(10, 50, 70, 16);
+        jLabel51.setBounds(10, 50, 80, 16);
 
         jLabel52.setText("Faltas");
         jPanel14.add(jLabel52);
-        jLabel52.setBounds(10, 80, 30, 16);
+        jLabel52.setBounds(10, 80, 80, 16);
 
         jLabel53.setText("Sueldo descontado");
         jPanel14.add(jLabel53);
-        jLabel53.setBounds(10, 110, 101, 16);
+        jLabel53.setBounds(10, 110, 120, 16);
 
         pmActividadHP.setText("0");
         jPanel14.add(pmActividadHP);
@@ -1355,11 +1364,11 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel55.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel55.setText("Director");
         jPanel15.add(jLabel55);
-        jLabel55.setBounds(75, 6, 50, 18);
+        jLabel55.setBounds(120, 10, 100, 18);
 
         jLabel63.setText("Actividad");
         jPanel15.add(jLabel63);
-        jLabel63.setBounds(10, 40, 50, 16);
+        jLabel63.setBounds(10, 40, 150, 16);
 
         actividadDirectorHP.setText("0");
         jPanel15.add(actividadDirectorHP);
@@ -1367,7 +1376,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel65.setText("pcs Estandar listas");
         jPanel15.add(jLabel65);
-        jLabel65.setBounds(10, 70, 95, 16);
+        jLabel65.setBounds(10, 70, 150, 16);
 
         pcestandarListasHP.setText("0");
         jPanel15.add(pcestandarListasHP);
@@ -1375,7 +1384,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel67.setText("pcs Tarjeta Grafica listas");
         jPanel15.add(jLabel67);
-        jLabel67.setBounds(10, 100, 125, 16);
+        jLabel67.setBounds(10, 100, 150, 16);
 
         pcgraficasListasHP.setText("0");
         jPanel15.add(pcgraficasListasHP);
@@ -1390,7 +1399,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel68.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel68.setText("Días para entrega");
         jPanel1.add(jLabel68);
-        jLabel68.setBounds(10, 10, 128, 25);
+        jLabel68.setBounds(20, 10, 128, 25);
 
         diasEntregaHP.setText("0");
         jPanel1.add(diasEntregaHP);
@@ -2133,7 +2142,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getHP().getProdPlacaBase().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getHP().getProdPlacaBase().getTail().getElement();//agarramos al ultimo 
             Global.getHP().getProdPlacaBase().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodplacabaseHPActivos.setText(Integer.toString(Global.getHP().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de placa base.Te quedarias sin productores de placa base.");
@@ -2143,7 +2152,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Productor prodplacabaseHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo 
+            Productor prodplacabaseHPNuevo = new Productor(1, Global.getMutexHP(),Global.getHP()); //creas al nuevo 
             Global.getHP().getProdPlacaBase().insertFinal(prodplacabaseHPNuevo);//lo agregas a la lista de HP
             prodplacabaseHPActivos.setText(Integer.toString(Global.getHP().getProdPlacaBase().getSize()));//actualizamos el label de la GUI
             prodplacabaseHPNuevo.start();//lo pones a trabajar
@@ -2155,7 +2164,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Productor prodcpuHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //creas al nuevo 
+            Productor prodcpuHPNuevo = new Productor(1, Global.getMutexHP(),Global.getHP()); //creas al nuevo 
             Global.getHP().getProdCpu().insertFinal(prodcpuHPNuevo);//lo agregas a la lista de HP
             prodcpuHPActivos.setText(Integer.toString(Global.getHP().getProdCpu().getSize()));//actualizamos el label de la GUI
             prodcpuHPNuevo.start();//lo pones a trabajar
@@ -2167,7 +2176,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Productor prodramHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear nuevo productor de ram
+            Productor prodramHPNuevo = new Productor(1, Global.getMutexHP(),Global.getHP()); //crear nuevo productor de ram
             Global.getHP().getProdRam().insertFinal(prodramHPNuevo);//agregar a la lista de productores de ram de HP
             prodramHPActivos.setText(Integer.toString(Global.getHP().getProdRam().getSize()));//actualizar el label de la GUI
             prodramHPNuevo.start();//lo pones a trabajar
@@ -2179,7 +2188,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Productor prodfuenteHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de fuente
+            Productor prodfuenteHPNuevo = new Productor(1, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de fuente
             Global.getHP().getProdFuentes().insertFinal(prodfuenteHPNuevo);//agregar a la lista de productores de fuente de hp
             prodfuenteHPActivos.setText(Integer.toString(Global.getHP().getProdFuentes().getSize()));//actualizar el label de la GUI
             prodfuenteHPNuevo.start();//lo pones a trabajar
@@ -2191,7 +2200,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Productor prodgraficaHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de tarjetas graficas
+            Productor prodgraficaHPNuevo = new Productor(1, Global.getMutexHP(),Global.getHP()); //crear al nuevo productor de tarjetas graficas
             Global.getHP().getProdGraficas().insertFinal(prodgraficaHPNuevo);//agregar a la lista de productores de tarjetas graficas de hp 
             prodgraficaHPActivos.setText(Integer.toString(Global.getHP().getProdGraficas().getSize()));//actualizar el label de la GUI
             prodgraficaHPNuevo.start();//lo pones a trabajar
@@ -2203,8 +2212,8 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorHP() == true){
-            Productor ensambladorHPNuevo = new Productor(1,20, Global.getMutexHP(),Global.getHP()); //crear al nuevo ensamblador
-            Global.getHP().getProdCpu().insertFinal(ensambladorHPNuevo);//agregar a la lista de ensambladores de hp 
+            Productor ensambladorHPNuevo = new Productor(1, Global.getMutexHP(),Global.getHP()); //crear al nuevo ensamblador
+            Global.getHP().getEnsambladores().insertFinal(ensambladorHPNuevo);//agregar a la lista de ensambladores de hp 
             ensambladoresHPActivos.setText(Integer.toString(Global.getHP().getEnsambladores().getSize()));//actualizar el label de la GUI
             ensambladorHPNuevo.start();//lo pones a trabajar
         }else{
@@ -2217,7 +2226,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getHP().getEnsambladores().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getHP().getEnsambladores().getTail().getElement();//agarramos al ultimo 
             Global.getHP().getEnsambladores().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             ensambladoresHPActivos.setText(Integer.toString(Global.getHP().getEnsambladores().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un ensamblador.Te quedarias sin ensambladores.");
@@ -2229,7 +2238,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getHP().getProdGraficas().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getHP().getProdGraficas().getTail().getElement();//agarramos al ultimo 
             Global.getHP().getProdGraficas().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodgraficaHPActivos.setText(Integer.toString(Global.getHP().getProdGraficas().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de tarjetas graficas.Te quedarias sin productores de tarjetas graficas.");
@@ -2241,7 +2250,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getHP().getProdFuentes().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getHP().getProdFuentes().getTail().getElement();//agarramos al ultimo 
             Global.getHP().getProdFuentes().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodfuenteHPActivos.setText(Integer.toString(Global.getHP().getProdFuentes().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de fuentes.Te quedarias sin productores de fuentes.");
@@ -2253,7 +2262,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getHP().getProdRam().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getHP().getProdRam().getTail().getElement();//agarramos al ultimo 
             Global.getHP().getProdRam().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodramHPActivos.setText(Integer.toString(Global.getHP().getProdRam().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un prodictores de ram.Te quedarias sin productores de ram.");
@@ -2265,7 +2274,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getHP().getProdCpu().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getHP().getProdCpu().getTail().getElement();//agarramos al ultimo 
             Global.getHP().getProdCpu().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodcpuHPActivos.setText(Integer.toString(Global.getHP().getProdCpu().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de Cpu.Te quedarias sin productores de Cpu.");
@@ -2275,9 +2284,9 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
         // TODO add your handling code here:
         if(Global.getApple().getEnsambladores().getSize() > 1){
-            Productor trabajadorDespedido = (Productor) Global.getApple().getEnsambladores().getTail().getElement();//agarramos al ultimo 
+            Ensamblador trabajadorDespedido = (Ensamblador) Global.getApple().getEnsambladores().getTail().getElement();//agarramos al ultimo 
             Global.getApple().getEnsambladores().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             ensambladoresAppleActivos.setText(Integer.toString(Global.getApple().getEnsambladores().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un ensamblador.Te quedarias sin ensambladores.");
@@ -2287,7 +2296,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Productor ensambladorAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
+            Ensamblador ensambladorAppleNuevo = new Ensamblador(1, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
             Global.getApple().getEnsambladores().insertFinal(ensambladorAppleNuevo);//lo agregas a la lista de Apple
             ensambladoresAppleActivos.setText(Integer.toString(Global.getApple().getEnsambladores().getSize()));//actualizamos el label de la interfaz
             ensambladorAppleNuevo.start();//lo pones a trabajar
@@ -2301,7 +2310,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getApple().getProdRam().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getApple().getProdRam().getTail().getElement();//agarramos al ultimo 
             Global.getApple().getProdRam().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodramAppleActivos.setText(Integer.toString(Global.getApple().getProdRam().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de ram.Te quedarias sin productores de ram.");
@@ -2313,7 +2322,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getApple().getProdCpu().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getApple().getProdCpu().getTail().getElement();//agarramos al ultimo 
             Global.getApple().getProdCpu().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productores de cpu.Te quedarias sin productores de cpu.");
@@ -2325,7 +2334,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getApple().getProdFuentes().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getApple().getProdFuentes().getTail().getElement();//agarramos al ultimo 
             Global.getApple().getProdFuentes().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodfuenteAppleActivos.setText(Integer.toString(Global.getApple().getProdFuentes().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de fuente.Te quedarias sin productores de fuente.");
@@ -2337,7 +2346,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getApple().getProdGraficas().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getApple().getProdGraficas().getTail().getElement();//agarramos al ultimo 
             Global.getApple().getProdGraficas().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodgraficaAppleActivos.setText(Integer.toString(Global.getApple().getProdGraficas().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productores de tarjeta grafica.Te quedarias sin productores de tarjeta grafica.");
@@ -2349,7 +2358,7 @@ public class Interfaz extends javax.swing.JFrame {
         if(Global.getApple().getProdPlacaBase().getSize() > 1){
             Productor trabajadorDespedido = (Productor) Global.getApple().getProdPlacaBase().getTail().getElement();//agarramos al ultimo 
             Global.getApple().getProdPlacaBase().deleteFinal();//eliminamos al ultimo 
-            trabajadorDespedido.stop();//detenemos el hilo del ultimo 
+            trabajadorDespedido.despedido = true;//detenemos el hilo del ultimo 
             prodplacabaseAppleActivos.setText(Integer.toString(Global.getApple().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
         }else{
             JOptionPane.showMessageDialog(null, "No puedes despedir un productor de placa base.Te quedarias sin productores de placa base.");
@@ -2359,7 +2368,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Productor prodplacabaseAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
+            Productor prodplacabaseAppleNuevo = new Productor(1, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
             Global.getApple().getProdPlacaBase().insertFinal(prodplacabaseAppleNuevo);//lo agregas a la lista de Apple
             prodplacabaseAppleActivos.setText(Integer.toString(Global.getApple().getProdPlacaBase().getSize()));//actualizamos el label de la interfaz
             prodplacabaseAppleNuevo.start();//lo pones a trabajar
@@ -2371,8 +2380,8 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Productor prodcpuAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
-            Global.getApple().getProdPlacaBase().insertFinal(prodcpuAppleNuevo);//lo agregas a la lista de Apple
+            Productor prodcpuAppleNuevo = new Productor(1, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
+            Global.getApple().getProdCpu().insertFinal(prodcpuAppleNuevo);//lo agregas a la lista de Apple
             prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
             prodcpuAppleNuevo.start();//lo pones a trabajar
         }else{
@@ -2383,19 +2392,19 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Productor prodramAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
+            Productor prodramAppleNuevo = new Productor(1, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
             Global.getApple().getProdRam().insertFinal(prodramAppleNuevo);//lo agregas a la lista de Apple
             prodramAppleActivos.setText(Integer.toString(Global.getApple().getProdRam().getSize()));//actualizamos el label de la interfaz
             prodramAppleNuevo.start();//lo pones a trabajar
         }else{
-            JOptionPane.showMessageDialog(null, "Límite de rtabajadores excedido");
+            JOptionPane.showMessageDialog(null, "Límite de trabajadores excedido");
         }
     }//GEN-LAST:event_jButton51ActionPerformed
 
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Productor prodfuenteAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
+            Productor prodfuenteAppleNuevo = new Productor(1, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
             Global.getApple().getProdFuentes().insertFinal(prodfuenteAppleNuevo);//lo agregas a la lista de Apple
             prodfuenteAppleActivos.setText(Integer.toString(Global.getApple().getProdFuentes().getSize()));//actualizamos el label de la interfaz
             prodfuenteAppleNuevo.start();//lo pones a trabajar
@@ -2407,7 +2416,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
-            Productor prodgraficaAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
+            Productor prodgraficaAppleNuevo = new Productor(1, Global.getMutexApple(),Global.getApple()); //creas al nuevo 
             Global.getApple().getProdGraficas().insertFinal(prodgraficaAppleNuevo);//lo agregas a la lista de Apple
             prodgraficaAppleActivos.setText(Integer.toString(Global.getApple().getProdGraficas().getSize()));//actualizamos el label de la interfaz
             prodgraficaAppleNuevo.start();//lo pones a trabajar

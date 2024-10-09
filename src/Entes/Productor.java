@@ -10,57 +10,61 @@ import java.util.logging.Logger;
  * @author Stefano Boschetti
  * @author Emiliana Plaz
  */
-public class Productor extends Trabajador{
+public class Productor extends Trabajador {
+
     private float salarioAcc;
     private float progresoActual;
+    public boolean despedido = false;
     
-    public Productor(int tipo,float salario, Semaphore mutex, Compania compania) {
-        super(tipo,salario, mutex,compania);
+    public Productor(int tipo, Semaphore mutex, Compania compania) {
+        super(tipo, mutex, compania);
         this.mutex = mutex;
         this.salarioAcc = 0;
         this.progresoActual = 0;
     }
-    
+
     @Override
-    public void run(){
-       while(true) {
-            try {
-                obtainSalary();
-                work();
-                //System.out.println("Trabajador: "+ this.name + " gana: "+this.salaryAcc+"$");
-                sleep(this.getCompania().getDuracionDia());
-                
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-    
-    public void obtainSalary(){
-        this.setSalarioAcc(this.getSalarioAcc() + this.getSalario()*24);
-        try {
-            this.getCompania().getAlmacen().getSalarioAccMutex().acquire(); //wait
-            this.getCompania().getAlmacen().addSalary(this.getTipo(), this.getSalario()*24,this.getCompania().getTipoCompania());
-            this.getCompania().getAlmacen().getSalarioAccMutex().release();// signal
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
+    public void run() {
+        while (true) {
+                try {
+                    if(this.despedido){
+                        break;
+                    }
+                    obtainSalary();
+                    work();
+                    //System.out.println("Trabajador: "+ this.name + " gana: "+this.salaryAcc+"$");
+                    sleep(this.getCompania().getDuracionDia());
+                    
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
+                }
         }
     }
 
-    
-    public void work(){
+    public void obtainSalary() {
+        this.setSalarioAcc(this.getSalarioAcc() + this.getSalario() * 24);
+        try {
+            this.getCompania().getAlmacen().getSalarioAccMutex().acquire(); //wait
+            this.getCompania().getAlmacen().addSalary(this.getTipo(), this.getSalario() * 24, this.getCompania().getTipoCompania());
+            this.getCompania().getAlmacen().getSalarioAccMutex().release();// signal
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void work() {
         this.setProgresoActual(this.getProgresoActual() + this.getProduccionDiaria());
-            try {
-                if (this.getProgresoActual() >= 1){
-                    this.getMutex().acquire(); //wait
-                    this.getCompania().getAlmacen().addPart(this);//Espacio critico
-                    this.getMutex().release();// signal
-                    this.setProgresoActual(0);
-                }
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
-            } 
-        
+        try {
+            if (this.getProgresoActual() >= 1) {
+                this.getMutex().acquire(); //wait
+                this.getCompania().getAlmacen().addPart(this);//Espacio critico
+                this.getMutex().release();// signal
+                this.setProgresoActual(0);
+            }
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public float getSalarioAcc() {

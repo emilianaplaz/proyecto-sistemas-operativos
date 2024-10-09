@@ -16,8 +16,8 @@ import java.util.logging.Logger;
  */
 public class Director extends Trabajador {
 
-    public Director(int tipo, float salario, Semaphore mutex, Compania compania) {
-        super(tipo, salario, mutex, compania);
+    public Director(int tipo, Semaphore mutex, Compania compania) {
+        super(tipo, mutex, compania);
         this.mutex = mutex;
     }
 

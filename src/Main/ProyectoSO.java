@@ -53,15 +53,15 @@ public class ProyectoSO {
         
         
         //Creamos y ponemos a trabjar los PM de ambas empresas
-        ProjectManager pm = new ProjectManager(6,40,mutexApple,       Global.getApple());
-        ProjectManager pm2 = new ProjectManager(6,40,mutexApple,Global.getHP());
+        ProjectManager pm = new ProjectManager(6,mutexApple,       Global.getApple());
+        ProjectManager pm2 = new ProjectManager(6,mutexApple,Global.getHP());
         pm.start();
         pm2.start();
         
         //Creamos y ponemos a trabjar los DIRECTORES de ambas empresas
-        Director directorApple = new Director(7,60,mutexApple,Global.getApple());
+        Director directorApple = new Director(7,mutexApple,Global.getApple());
         directorApple.start();
-        Director directorHP = new Director(7,60,mutexHP,Global.getHP());
+        Director directorHP = new Director(7,mutexHP,Global.getHP());
         directorHP.start();
         
         // CREAMOS UN TRABAJADOR de cada empresa.

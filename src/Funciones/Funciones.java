@@ -77,42 +77,42 @@ public class Funciones {
                         switch (i) {
                             case 0 -> {
                                 for (int j = 0; j < Integer.parseInt(hp[i]); j++) {
-                                    Productor placaNuevo = new Productor(0, 40, Global.getMutexHP(), Global.getHP());
+                                    Productor placaNuevo = new Productor(0, Global.getMutexHP(), Global.getHP());
                                     placaNuevo.start();
                                     Global.getHP().getProdPlacaBase().insertFinal(placaNuevo);
                                 }
                             }
                             case 1 -> {
                                 for (int j = 0; j < Integer.parseInt(hp[i]); j++) {
-                                    Productor cpuNuevo = new Productor(1, 20, Global.getMutexHP(), Global.getHP());
+                                    Productor cpuNuevo = new Productor(1, Global.getMutexHP(), Global.getHP());
                                     cpuNuevo.start();
                                     Global.getHP().getProdCpu().insertFinal(cpuNuevo);
                                 }
                             }
                             case 2 -> {
                                 for (int j = 0; j < Integer.parseInt(hp[i]); j++) {
-                                    Productor ramNuevo = new Productor(2, 26, Global.getMutexHP(), Global.getHP());
+                                    Productor ramNuevo = new Productor(2, Global.getMutexHP(), Global.getHP());
                                     ramNuevo.start();
                                     Global.getHP().getProdRam().insertFinal(ramNuevo);
                                 }
                             }
                             case 3 -> {
                                 for (int j = 0; j < Integer.parseInt(hp[i]); j++) {
-                                    Productor fuenteNuevo = new Productor(3, 16, Global.getMutexHP(), Global.getHP());
+                                    Productor fuenteNuevo = new Productor(3, Global.getMutexHP(), Global.getHP());
                                     fuenteNuevo.start();
                                     Global.getHP().getProdFuentes().insertFinal(fuenteNuevo);
                                 }
                             }
                             case 4 -> {
                                 for (int j = 0; j < Integer.parseInt(hp[i]); j++) {
-                                    Productor graficasNuevo = new Productor(4, 34, Global.getMutexHP(), Global.getHP());
+                                    Productor graficasNuevo = new Productor(4, Global.getMutexHP(), Global.getHP());
                                     graficasNuevo.start();
                                     Global.getHP().getProdGraficas().insertFinal(graficasNuevo);
                                 }
                             }
                             case 5 -> {
                                 for (int j = 0; j < Integer.parseInt(hp[i]); j++) {
-                                    Ensamblador ensambladorNuevo = new Ensamblador(5, 50, Global.getMutexHP(), Global.getHP());
+                                    Ensamblador ensambladorNuevo = new Ensamblador(5, Global.getMutexHP(), Global.getHP());
                                     ensambladorNuevo.start();
                                     Global.getHP().getEnsambladores().insertFinal(ensambladorNuevo);
                                 }
@@ -127,42 +127,42 @@ public class Funciones {
                         switch (i) {
                             case 0 -> {
                                 for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                    Productor prodplacabaseNuevo = new Productor(0, 40, Global.getMutexApple(), Global.getApple());
+                                    Productor prodplacabaseNuevo = new Productor(0, Global.getMutexApple(), Global.getApple());
                                     prodplacabaseNuevo.start();
                                     Global.getApple().getProdPlacaBase().insertFinal(prodplacabaseNuevo);
                                 }
                             }
                             case 1 -> {
                                 for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                    Productor prodcpuNuevo = new Productor(1, 20, Global.getMutexApple(), Global.getApple());
+                                    Productor prodcpuNuevo = new Productor(1, Global.getMutexApple(), Global.getApple());
                                     prodcpuNuevo.start();
                                     Global.getApple().getProdCpu().insertFinal(prodcpuNuevo);
                                 }
                             }
                             case 2 -> {
                                 for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                    Productor prodramNuevo = new Productor(2, 26, Global.getMutexApple(), Global.getApple());
+                                    Productor prodramNuevo = new Productor(2, Global.getMutexApple(), Global.getApple());
                                     prodramNuevo.start();
                                     Global.getApple().getProdRam().insertFinal(prodramNuevo);
                                 }
                             }
                             case 3 -> {
                                 for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                    Productor prodfuenteNuevo = new Productor(3, 16, Global.getMutexApple(), Global.getApple());
+                                    Productor prodfuenteNuevo = new Productor(3, Global.getMutexApple(), Global.getApple());
                                     prodfuenteNuevo.start();
                                     Global.getApple().getProdFuentes().insertFinal(prodfuenteNuevo);
                                 }
                             }
                             case 4 -> {
                                 for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                    Productor prodgraficaNuevo = new Productor(4, 34, Global.getMutexApple(), Global.getApple());
+                                    Productor prodgraficaNuevo = new Productor(4, Global.getMutexApple(), Global.getApple());
                                     prodgraficaNuevo.start();
                                     Global.getApple().getProdGraficas().insertFinal(prodgraficaNuevo);
                                 }
                             }
                             case 5 -> {
                                 for (int j = 0; j < Integer.parseInt(apple[i]); j++) {
-                                    Ensamblador ensambladorNuevo = new Ensamblador(5, 50, Global.getMutexApple(), Global.getApple());
+                                    Ensamblador ensambladorNuevo = new Ensamblador(5, Global.getMutexApple(), Global.getApple());
                                     ensambladorNuevo.start();
                                     Global.getApple().getEnsambladores().insertFinal(ensambladorNuevo);
                                 }
@@ -175,10 +175,13 @@ public class Funciones {
                     //Cargamos duracion dias
                     Global.getHP().setDuracionDia(Integer.parseInt(datos_split[2]) * 1000);
                     Global.getApple().setDuracionDia(Integer.parseInt(datos_split[2]) * 1000);
-
+                    // Los actualizamos en la interfaz
+                    ManejadorInterfaz.getInterfaz().setDuracionDias(datos_split[2]);
+                    
                     //Cargamos deadline
                     Global.getAlmacenHP().setDeadline(Integer.parseInt(datos_split[3]));
                     Global.getAlmacenApple().setDeadline(Integer.parseInt(datos_split[3]));
+                    ManejadorInterfaz.getInterfaz().setDiasEntrega(datos_split[3]);
 
                     //Cargamos el estadoDeadline
                     Global.getAlmacenApple().setEstadoDeadline(Integer.parseInt(datos_split[3]), Global.getApple().getTipoCompania());
