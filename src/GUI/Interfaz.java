@@ -561,7 +561,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel5.setText("HP");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(721, 121, 50, 17);
+        jLabel5.setBounds(640, 130, 90, 17);
 
         jLabel6.setText("Utilidades");
         jPanel2.add(jLabel6);
@@ -585,43 +585,43 @@ public class Interfaz extends javax.swing.JFrame {
 
         utilidadesappleinicio.setText("0");
         jPanel2.add(utilidadesappleinicio);
-        utilidadesappleinicio.setBounds(365, 171, 40, 17);
+        utilidadesappleinicio.setBounds(365, 171, 110, 17);
 
         operativosappleinicio.setText("0");
         jPanel2.add(operativosappleinicio);
-        operativosappleinicio.setBounds(365, 206, 60, 17);
+        operativosappleinicio.setBounds(365, 206, 130, 17);
 
         gananciasappleinicio.setText("0");
         jPanel2.add(gananciasappleinicio);
-        gananciasappleinicio.setBounds(365, 241, 80, 17);
+        gananciasappleinicio.setBounds(365, 241, 150, 17);
 
         estandarappleinicio.setText("0");
         jPanel2.add(estandarappleinicio);
-        estandarappleinicio.setBounds(365, 276, 30, 17);
+        estandarappleinicio.setBounds(365, 276, 100, 17);
 
         graficasappleinicio.setText("0");
         jPanel2.add(graficasappleinicio);
-        graficasappleinicio.setBounds(365, 311, 30, 17);
+        graficasappleinicio.setBounds(365, 311, 100, 17);
 
         utilidadeshpinicio.setText("0");
         jPanel2.add(utilidadeshpinicio);
-        utilidadeshpinicio.setBounds(731, 171, 30, 17);
+        utilidadeshpinicio.setBounds(641, 171, 120, 17);
 
         operativoshpinicio.setText("0");
         jPanel2.add(operativoshpinicio);
-        operativoshpinicio.setBounds(731, 206, 30, 17);
+        operativoshpinicio.setBounds(641, 206, 120, 17);
 
         gananciashpinicio.setText("0");
         jPanel2.add(gananciashpinicio);
-        gananciashpinicio.setBounds(731, 241, 30, 17);
+        gananciashpinicio.setBounds(641, 241, 120, 17);
 
         estandarhpinicio.setText("0");
         jPanel2.add(estandarhpinicio);
-        estandarhpinicio.setBounds(731, 276, 30, 17);
+        estandarhpinicio.setBounds(641, 276, 120, 17);
 
         graficashpinicio.setText("0");
         jPanel2.add(graficashpinicio);
-        graficashpinicio.setBounds(731, 311, 30, 17);
+        graficashpinicio.setBounds(641, 311, 120, 17);
 
         jTabbedPane2.addTab("Home", jPanel2);
 
@@ -773,7 +773,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton7);
-        jButton7.setBounds(520, 380, 30, 23);
+        jButton7.setBounds(380, 410, 30, 23);
 
         jButton9.setText("-");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -822,11 +822,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel60.setText("Duración de días en segundos");
         jPanel3.add(jLabel60);
-        jLabel60.setBounds(30, 380, 190, 17);
+        jLabel60.setBounds(20, 380, 250, 17);
 
         duracionDias.setText("0");
         jPanel3.add(duracionDias);
-        duracionDias.setBounds(260, 380, 7, 17);
+        duracionDias.setBounds(80, 410, 40, 17);
 
         jButton14.setText("+");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -844,15 +844,15 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton15);
-        jButton15.setBounds(590, 380, 30, 23);
+        jButton15.setBounds(490, 410, 30, 23);
 
         jLabel69.setText("Días para la entrega");
         jPanel3.add(jLabel69);
-        jLabel69.setBounds(390, 380, 130, 17);
+        jLabel69.setBounds(390, 380, 210, 17);
 
         diasEntrega.setText("0");
         jPanel3.add(diasEntrega);
-        diasEntrega.setBounds(570, 380, 7, 17);
+        diasEntrega.setBounds(430, 410, 7, 17);
 
         jButton16.setText("-");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -870,7 +870,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton17);
-        jButton17.setBounds(280, 380, 30, 23);
+        jButton17.setBounds(120, 410, 30, 23);
 
         jButton18.setText("-");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -879,7 +879,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton18);
-        jButton18.setBounds(220, 380, 30, 23);
+        jButton18.setBounds(30, 410, 30, 23);
 
         jButton19.setText("-");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -1170,43 +1170,43 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel21.setText("Placa base");
         jPanel7.add(jLabel21);
-        jLabel21.setBounds(30, 40, 150, 17);
+        jLabel21.setBounds(30, 40, 220, 17);
 
         jLabel29.setText("CPU");
         jPanel7.add(jLabel29);
-        jLabel29.setBounds(30, 70, 26, 17);
+        jLabel29.setBounds(30, 70, 90, 17);
 
         jLabel30.setText("RAM");
         jPanel7.add(jLabel30);
-        jLabel30.setBounds(30, 100, 28, 17);
+        jLabel30.setBounds(30, 100, 100, 17);
 
         jLabel31.setText("Fuente");
         jPanel7.add(jLabel31);
-        jLabel31.setBounds(30, 130, 39, 17);
+        jLabel31.setBounds(30, 130, 110, 17);
 
         jLabel32.setText("Tarjetas Gráficas");
         jPanel7.add(jLabel32);
-        jLabel32.setBounds(30, 160, 110, 17);
+        jLabel32.setBounds(30, 160, 180, 17);
 
         placasbaseApple.setText("0");
         jPanel7.add(placasbaseApple);
-        placasbaseApple.setBounds(190, 40, 7, 17);
+        placasbaseApple.setBounds(190, 40, 100, 17);
 
         cpuApple.setText("0");
         jPanel7.add(cpuApple);
-        cpuApple.setBounds(190, 70, 7, 17);
+        cpuApple.setBounds(190, 70, 100, 17);
 
         ramApple.setText("0");
         jPanel7.add(ramApple);
-        ramApple.setBounds(190, 100, 7, 17);
+        ramApple.setBounds(190, 100, 100, 17);
 
         fuentesApple.setText("0");
         jPanel7.add(fuentesApple);
-        fuentesApple.setBounds(190, 130, 7, 17);
+        fuentesApple.setBounds(190, 130, 100, 17);
 
         graficasApple.setText("0");
         jPanel7.add(graficasApple);
-        graficasApple.setBounds(190, 160, 7, 17);
+        graficasApple.setBounds(190, 160, 100, 17);
 
         jPanel4.add(jPanel7);
         jPanel7.setBounds(440, 50, 380, 280);
@@ -1221,27 +1221,27 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel62.setText("Costos operativos");
         jPanel8.add(jLabel62);
-        jLabel62.setBounds(20, 40, 106, 17);
+        jLabel62.setBounds(20, 40, 150, 17);
 
         jLabel64.setText("Utilidades");
         jPanel8.add(jLabel64);
-        jLabel64.setBounds(20, 70, 59, 17);
+        jLabel64.setBounds(20, 70, 100, 17);
 
         jLabel66.setText("Ganancia en bruto");
         jPanel8.add(jLabel66);
-        jLabel66.setBounds(20, 100, 120, 17);
+        jLabel66.setBounds(20, 100, 150, 17);
 
         costosOperativosApple.setText("0");
         jPanel8.add(costosOperativosApple);
-        costosOperativosApple.setBounds(160, 40, 7, 17);
+        costosOperativosApple.setBounds(190, 40, 50, 17);
 
         utilidadesApple.setText("0");
         jPanel8.add(utilidadesApple);
-        utilidadesApple.setBounds(160, 70, 7, 17);
+        utilidadesApple.setBounds(190, 70, 50, 17);
 
         gananciasApple.setText("0");
         jPanel8.add(gananciasApple);
-        gananciasApple.setBounds(160, 100, 7, 17);
+        gananciasApple.setBounds(190, 100, 50, 17);
 
         jPanel4.add(jPanel8);
         jPanel8.setBounds(30, 340, 260, 160);
@@ -1256,27 +1256,27 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel34.setText("Actividad");
         jPanel9.add(jLabel34);
-        jLabel34.setBounds(10, 40, 70, 17);
+        jLabel34.setBounds(10, 40, 90, 17);
 
         jLabel35.setText("Faltas");
         jPanel9.add(jLabel35);
-        jLabel35.setBounds(10, 70, 35, 17);
+        jLabel35.setBounds(10, 70, 60, 17);
 
         jLabel36.setText("Sueldo descontado");
         jPanel9.add(jLabel36);
-        jLabel36.setBounds(10, 100, 120, 17);
+        jLabel36.setBounds(10, 100, 130, 17);
 
         pmActividadApple.setText("0");
         jPanel9.add(pmActividadApple);
-        pmActividadApple.setBounds(130, 40, 7, 17);
+        pmActividadApple.setBounds(130, 40, 50, 17);
 
         faltaspmApple.setText("0");
         jPanel9.add(faltaspmApple);
-        faltaspmApple.setBounds(130, 70, 7, 17);
+        faltaspmApple.setBounds(130, 70, 50, 17);
 
         salarioDescontadoApple.setText("0");
         jPanel9.add(salarioDescontadoApple);
-        salarioDescontadoApple.setBounds(140, 100, 7, 17);
+        salarioDescontadoApple.setBounds(140, 100, 50, 17);
 
         jPanel4.add(jPanel9);
         jPanel9.setBounds(300, 340, 270, 160);
@@ -1301,27 +1301,27 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel57.setText("Actividad");
         jPanel12.add(jLabel57);
-        jLabel57.setBounds(10, 40, 55, 17);
+        jLabel57.setBounds(10, 40, 90, 17);
 
         jLabel58.setText("pcs Estandar listas");
         jPanel12.add(jLabel58);
-        jLabel58.setBounds(10, 70, 113, 17);
+        jLabel58.setBounds(10, 70, 150, 17);
 
         jLabel59.setText("pcs Tarjeta Grafica listas");
         jPanel12.add(jLabel59);
-        jLabel59.setBounds(10, 100, 146, 17);
+        jLabel59.setBounds(10, 100, 180, 17);
 
         actividadDirectorApple.setText("0");
         jPanel12.add(actividadDirectorApple);
-        actividadDirectorApple.setBounds(170, 40, 7, 17);
+        actividadDirectorApple.setBounds(170, 40, 30, 17);
 
         pcestandarListasApple.setText("0");
         jPanel12.add(pcestandarListasApple);
-        pcestandarListasApple.setBounds(170, 70, 7, 17);
+        pcestandarListasApple.setBounds(170, 70, 30, 17);
 
         pcgraficasListasApple.setText("0");
         jPanel12.add(pcgraficasListasApple);
-        pcgraficasListasApple.setBounds(170, 100, 49, 17);
+        pcgraficasListasApple.setBounds(170, 100, 70, 17);
 
         jPanel4.add(jPanel12);
         jPanel12.setBounds(580, 340, 240, 160);
@@ -2210,7 +2210,7 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(this.permisoDeAumentoDeTrabajadorApple() == true){
             Productor prodcpuAppleNuevo = new Productor(1,20, Global.getMutexApple(),Global.getApple()); //creas al nuevo guionista
-            Global.getApple().getProdCpu().insertFinal(prodcpuAppleNuevo);//lo agregas a la lista de guionistas de disney
+            Global.getApple().getProdPlacaBase().insertFinal(prodcpuAppleNuevo);//lo agregas a la lista de guionistas de disney
             prodcpuAppleActivos.setText(Integer.toString(Global.getApple().getProdCpu().getSize()));//actualizamos el label de la interfaz
             prodcpuAppleNuevo.start();//lo pones a trabajar
         }else{
