@@ -18,6 +18,7 @@ public class Director extends Trabajador {
 
     public Director(int tipo, float salario, Semaphore mutex, Compania compania) {
         super(tipo, salario, mutex, compania);
+        this.mutex = mutex;
     }
 
     @Override

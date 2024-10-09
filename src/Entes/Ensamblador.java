@@ -23,13 +23,13 @@ public class Ensamblador extends Trabajador {
 
     public Ensamblador(int tipo, float salario, Semaphore mutex, Compania compania) {
         super(tipo, salario, mutex, compania);
+        this.mutex = mutex;
         this.acc = 0;
     }
 
     @Override
     public void run() {
         while (true) {
-
             try {
                 obtainSalary();
                 work();
@@ -121,6 +121,7 @@ public class Ensamblador extends Trabajador {
             this.acc = this.acc + this.getProduccionDiaria();
             if (this.acc >= 1) {
                 try {
+                    
                     this.getMutex().acquire(); //wait
                     //Termina de agregar un capitulo.
                     this.agregarComputadora();// CRITICA
@@ -140,6 +141,7 @@ public class Ensamblador extends Trabajador {
     public void agregarComputadora() {
         if (this.pcEstandar == 1) {
             this.pcEstandar = 0;
+            //System.out.println(this.getCompania().getAlmacen().getPcEstandar());
             this.getCompania().getAlmacen().setPcEstandar(this.getCompania().getAlmacen().getPcEstandar() + 1, this.getCompania().getTipoCompania());
             this.getCompania().getAlmacen().setpcAcumulados(this.getCompania().getAlmacen().getpcAcumulados() + 1);
         } else if (this.pcConGrafica == 1) {
