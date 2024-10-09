@@ -36,10 +36,10 @@ public class ProyectoSO {
         
         ManejadorInterfaz.getInterfaz().show();
         
-         //Creamos la compania Disney y la cargamos a Global
+         //Creamos la compania Apple y la cargamos a Global
         Compania apple = new Compania(Global.getAlmacenApple(),0);
         Global.setApple(apple);
-        //Creamos la compania Cartoon Network y la cargamos a Global
+        //Creamos la compania HP y la cargamos a Global
         Compania hp = new Compania(Global.getAlmacenHP(),1);
         Global.setHP(hp);
         
@@ -59,10 +59,10 @@ public class ProyectoSO {
         pm2.start();
         
         //Creamos y ponemos a trabjar los DIRECTORES de ambas empresas
-        Director directorDisney = new Director(7,60,mutexApple,Global.getApple());
-        directorDisney.start();
-        Director directorCN = new Director(7,60,mutexHP,Global.getHP());
-        directorCN.start();
+        Director directorApple = new Director(7,60,mutexApple,Global.getApple());
+        directorApple.start();
+        Director directorHP = new Director(7,60,mutexHP,Global.getHP());
+        directorHP.start();
         
         //Global.getGrafico().start();
     }

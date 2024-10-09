@@ -3,8 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Entes;
+
 import Compañias.Compania;
 import java.util.concurrent.Semaphore;
+import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  * @author Stefano Boschetti
