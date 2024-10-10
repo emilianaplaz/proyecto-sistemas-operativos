@@ -37,6 +37,7 @@ public class Director extends Trabajador {
         if (this.getCompania().getAlmacen().getEstadoDeadline() == 0) {
             try {
                 this.enviarComputadoras();
+                System.out.println(this.getCompania().getAlmacen().getpcAcumulados());
                 this.getCompania().getAlmacen().getDiasMutex().acquire();
                 this.getCompania().getAlmacen().setEstadoDeadline(this.getCompania().getAlmacen().getDeadline(), this.getCompania().getTipoCompania());
                 this.getCompania().getAlmacen().getDiasMutex().release();

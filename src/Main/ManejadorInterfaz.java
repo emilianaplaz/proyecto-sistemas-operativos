@@ -12,8 +12,6 @@ import GUI.Interfaz;
  */
 public class ManejadorInterfaz {
     private static Interfaz interfaz = new Interfaz();
-    //private static Drive driveDisney = new Drive();
-
     
     public static Interfaz getInterfaz() {
         return interfaz;

@@ -62,10 +62,7 @@ public class ProyectoSO {
         Director directorApple = new Director(7,mutexApple,Global.getApple());
         directorApple.start();
         Director directorHP = new Director(7,mutexHP,Global.getHP());
-        directorHP.start();
-        
-        // CREAMOS UN TRABAJADOR de cada empresa.
-        
+        directorHP.start();        
         
         
         

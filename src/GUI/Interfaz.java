@@ -6,6 +6,7 @@ package GUI;
 
 import Entes.Ensamblador;
 import Entes.Productor;
+import java.awt.Color;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -79,8 +80,10 @@ public class Interfaz extends javax.swing.JFrame {
     public void cambiarDiasLanzamiento(int t,int tipoCompania){
         if(tipoCompania == 0){
             diasEntregaApple.setText(Integer.toString(t));
+            diasHP1.setText(Integer.toString(t));
         }else{
             diasEntregaHP.setText(Integer.toString(t));
+            diasHP1.setText(Integer.toString(t));
         }
     }
     
@@ -118,23 +121,21 @@ public class Interfaz extends javax.swing.JFrame {
     
     public void cambiarPcEstandarListas(int t,int tipoCompania){
         if(tipoCompania == 0){
-            //System.out.println(t);
             pcestandarListasApple.setText(Integer.toString(t));
-            estandarappleinicio.setText(Integer.toString(t));
+            estandarappleinicio.setText(Integer.toString(Global.getAlmacenApple().getpcAcumulados()));
         }else{
             pcestandarListasHP.setText(Integer.toString(t));
-            estandarhpinicio.setText(Integer.toString(t));
+            estandarhpinicio.setText(Integer.toString(Global.getAlmacenHP().getpcAcumulados()));
         }
     }
     
     public void cambiarPcGraficasListas(int t,int tipoCompania){
         if(tipoCompania == 0){
             pcgraficasListasApple.setText(Integer.toString(t));
-            graficasappleinicio.setText(Integer.toString(t));
+            graficasappleinicio.setText(Integer.toString(Global.getAlmacenApple().getpcConGraficaAcumulados()));
         }else{
-            //System.out.println(t+"hj");
             pcgraficasListasHP.setText(Integer.toString(t));
-            graficashpinicio.setText(Integer.toString(t));
+            graficashpinicio.setText(Integer.toString(Global.getAlmacenHP().getpcConGraficaAcumulados()));
         }
     }
     
@@ -332,7 +333,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         diasInicio = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -353,6 +353,8 @@ public class Interfaz extends javax.swing.JFrame {
         gananciashpinicio = new javax.swing.JLabel();
         estandarhpinicio = new javax.swing.JLabel();
         graficashpinicio = new javax.swing.JLabel();
+        diasHP1 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
@@ -551,87 +553,112 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jLabel1.setText("Apple vs HP");
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(430, 30, 220, 16);
-
-        jLabel2.setText("DIAS:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel2.setText("DEADLINE:");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(24, 98, 80, 16);
+        jLabel2.setBounds(10, 50, 80, 20);
 
+        diasInicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         diasInicio.setText("0");
         jPanel2.add(diasInicio);
-        diasInicio.setBounds(130, 100, 90, 16);
+        diasInicio.setBounds(100, 10, 90, 19);
         jPanel2.add(jLabel3);
         jLabel3.setBounds(24, 188, 0, 0);
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel4.setText("Apple");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(351, 121, 90, 16);
+        jLabel4.setBounds(350, 130, 70, 26);
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel5.setText("HP");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(640, 130, 90, 16);
+        jLabel5.setBounds(630, 130, 40, 26);
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel6.setText("Utilidades");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(100, 180, 120, 16);
+        jLabel6.setBounds(150, 180, 180, 20);
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel7.setText("Costos Operativos");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(100, 210, 150, 16);
+        jLabel7.setBounds(150, 210, 180, 20);
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel8.setText("Ganancias en bruto");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(100, 240, 150, 16);
+        jLabel8.setBounds(150, 240, 170, 20);
 
-        jLabel9.setText("Computadoras Entándar");
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel9.setText("PC Estándar vendidas");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(100, 280, 170, 16);
+        jLabel9.setBounds(150, 280, 170, 20);
 
-        jLabel10.setText("Computadoras Gráficas");
+        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel10.setText("PC con Gráfica vendidas");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(100, 310, 170, 16);
+        jLabel10.setBounds(150, 310, 170, 20);
 
+        utilidadesappleinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         utilidadesappleinicio.setText("0");
         jPanel2.add(utilidadesappleinicio);
-        utilidadesappleinicio.setBounds(365, 171, 110, 16);
+        utilidadesappleinicio.setBounds(365, 171, 110, 19);
 
+        operativosappleinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         operativosappleinicio.setText("0");
         jPanel2.add(operativosappleinicio);
-        operativosappleinicio.setBounds(365, 206, 130, 16);
+        operativosappleinicio.setBounds(365, 206, 130, 19);
 
+        gananciasappleinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         gananciasappleinicio.setText("0");
         jPanel2.add(gananciasappleinicio);
-        gananciasappleinicio.setBounds(365, 241, 150, 16);
+        gananciasappleinicio.setBounds(365, 241, 150, 19);
 
+        estandarappleinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         estandarappleinicio.setText("0");
         jPanel2.add(estandarappleinicio);
-        estandarappleinicio.setBounds(365, 276, 100, 16);
+        estandarappleinicio.setBounds(365, 276, 100, 19);
 
+        graficasappleinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         graficasappleinicio.setText("0");
         jPanel2.add(graficasappleinicio);
-        graficasappleinicio.setBounds(365, 311, 100, 16);
+        graficasappleinicio.setBounds(365, 311, 100, 19);
 
+        utilidadeshpinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         utilidadeshpinicio.setText("0");
         jPanel2.add(utilidadeshpinicio);
-        utilidadeshpinicio.setBounds(641, 171, 120, 16);
+        utilidadeshpinicio.setBounds(641, 171, 120, 19);
 
+        operativoshpinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         operativoshpinicio.setText("0");
         jPanel2.add(operativoshpinicio);
-        operativoshpinicio.setBounds(641, 206, 120, 16);
+        operativoshpinicio.setBounds(641, 206, 120, 19);
 
+        gananciashpinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         gananciashpinicio.setText("0");
         jPanel2.add(gananciashpinicio);
-        gananciashpinicio.setBounds(641, 241, 120, 16);
+        gananciashpinicio.setBounds(641, 241, 120, 19);
 
+        estandarhpinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         estandarhpinicio.setText("0");
         jPanel2.add(estandarhpinicio);
-        estandarhpinicio.setBounds(641, 276, 120, 16);
+        estandarhpinicio.setBounds(641, 276, 120, 19);
 
+        graficashpinicio.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         graficashpinicio.setText("0");
         jPanel2.add(graficashpinicio);
-        graficashpinicio.setBounds(641, 311, 120, 16);
+        graficashpinicio.setBounds(641, 311, 120, 19);
+
+        diasHP1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        diasHP1.setText("0");
+        jPanel2.add(diasHP1);
+        diasHP1.setBounds(100, 50, 70, 19);
+
+        jLabel71.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel71.setText("DIAS:");
+        jPanel2.add(jLabel71);
+        jLabel71.setBounds(10, 10, 80, 20);
 
         jTabbedPane2.addTab("Home", jPanel2);
 
@@ -983,17 +1010,17 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel12.add(jLabel57);
         jLabel57.setBounds(10, 40, 90, 16);
 
-        jLabel58.setText("pcs Estandar listas");
+        jLabel58.setText("PC Estandar listas");
         jPanel12.add(jLabel58);
         jLabel58.setBounds(10, 70, 150, 16);
 
-        jLabel59.setText("pcs Tarjeta Grafica listas");
+        jLabel59.setText("PC Tarjeta Grafica listas");
         jPanel12.add(jLabel59);
         jLabel59.setBounds(10, 100, 140, 16);
 
         actividadDirectorApple.setText("0");
         jPanel12.add(actividadDirectorApple);
-        actividadDirectorApple.setBounds(170, 40, 60, 16);
+        actividadDirectorApple.setBounds(120, 40, 100, 16);
 
         pcestandarListasApple.setText("0");
         jPanel12.add(pcestandarListasApple);
@@ -1014,18 +1041,20 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel16.add(jLabel72);
         jLabel72.setBounds(10, 10, 130, 18);
 
+        diasEntregaApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         diasEntregaApple.setText("0");
         jPanel16.add(diasEntregaApple);
-        diasEntregaApple.setBounds(40, 60, 70, 16);
+        diasEntregaApple.setBounds(60, 60, 70, 19);
 
         jLabel74.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel74.setText("Dias");
         jPanel16.add(jLabel74);
-        jLabel74.setBounds(40, 110, 49, 18);
+        jLabel74.setBounds(50, 110, 49, 18);
 
+        diasApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         diasApple.setText("0");
         jPanel16.add(diasApple);
-        diasApple.setBounds(40, 160, 70, 16);
+        diasApple.setBounds(60, 160, 70, 19);
 
         jPanel4.add(jPanel16);
         jPanel16.setBounds(830, 210, 140, 290);
@@ -1372,9 +1401,9 @@ public class Interfaz extends javax.swing.JFrame {
 
         actividadDirectorHP.setText("0");
         jPanel15.add(actividadDirectorHP);
-        actividadDirectorHP.setBounds(170, 40, 120, 16);
+        actividadDirectorHP.setBounds(110, 40, 180, 16);
 
-        jLabel65.setText("pcs Estandar listas");
+        jLabel65.setText("PC Estandar listas");
         jPanel15.add(jLabel65);
         jLabel65.setBounds(10, 70, 150, 16);
 
@@ -1382,7 +1411,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel15.add(pcestandarListasHP);
         pcestandarListasHP.setBounds(170, 70, 120, 16);
 
-        jLabel67.setText("pcs Tarjeta Grafica listas");
+        jLabel67.setText("PC Tarjeta Grafica listas");
         jPanel15.add(jLabel67);
         jLabel67.setBounds(10, 100, 150, 16);
 
@@ -1401,18 +1430,20 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1.add(jLabel68);
         jLabel68.setBounds(20, 10, 128, 25);
 
+        diasEntregaHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         diasEntregaHP.setText("0");
         jPanel1.add(diasEntregaHP);
-        diasEntregaHP.setBounds(50, 60, 70, 16);
+        diasEntregaHP.setBounds(70, 60, 70, 19);
 
         jLabel70.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel70.setText("Dias");
         jPanel1.add(jLabel70);
-        jLabel70.setBounds(50, 120, 49, 18);
+        jLabel70.setBounds(60, 120, 49, 18);
 
+        diasHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         diasHP.setText("0");
         jPanel1.add(diasHP);
-        diasHP.setBounds(50, 180, 70, 16);
+        diasHP.setBounds(70, 180, 70, 19);
 
         jPanel5.add(jPanel1);
         jPanel1.setBounds(820, 40, 160, 290);
@@ -1426,85 +1457,105 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel3.add(jLabel11);
         jLabel11.setBounds(230, 20, 250, 30);
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel12.setText("Productors placa base");
         jPanel3.add(jLabel12);
-        jLabel12.setBounds(32, 152, 180, 16);
+        jLabel12.setBounds(32, 152, 180, 20);
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel13.setText("Productores CPU");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(30, 190, 140, 16);
+        jLabel13.setBounds(30, 190, 140, 20);
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel14.setText("Productores RAM");
         jPanel3.add(jLabel14);
-        jLabel14.setBounds(32, 222, 140, 16);
+        jLabel14.setBounds(32, 222, 140, 20);
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel15.setText("Productores fuentes de energía");
         jPanel3.add(jLabel15);
-        jLabel15.setBounds(32, 257, 210, 16);
+        jLabel15.setBounds(32, 257, 210, 20);
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel16.setText("Productores tarjeta gráfica");
         jPanel3.add(jLabel16);
-        jLabel16.setBounds(32, 292, 200, 16);
+        jLabel16.setBounds(32, 292, 200, 20);
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel17.setText("Ensambladores");
         jPanel3.add(jLabel17);
-        jLabel17.setBounds(32, 327, 150, 16);
+        jLabel17.setBounds(32, 327, 150, 20);
 
+        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel18.setText("Apple");
         jPanel3.add(jLabel18);
-        jLabel18.setBounds(350, 90, 70, 16);
+        jLabel18.setBounds(340, 90, 70, 30);
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel19.setText("HP");
         jPanel3.add(jLabel19);
-        jLabel19.setBounds(580, 90, 60, 16);
+        jLabel19.setBounds(580, 90, 60, 25);
 
+        prodplacabaseApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodplacabaseApple.setText("1");
         jPanel3.add(prodplacabaseApple);
-        prodplacabaseApple.setBounds(360, 160, 50, 16);
+        prodplacabaseApple.setBounds(360, 160, 50, 19);
 
+        prodcpuApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodcpuApple.setText("1");
         jPanel3.add(prodcpuApple);
-        prodcpuApple.setBounds(360, 200, 50, 16);
+        prodcpuApple.setBounds(360, 200, 50, 19);
 
+        prodramApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodramApple.setText("1");
         jPanel3.add(prodramApple);
-        prodramApple.setBounds(360, 230, 50, 16);
+        prodramApple.setBounds(360, 230, 50, 19);
 
+        prodfuenteApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodfuenteApple.setText("1");
         jPanel3.add(prodfuenteApple);
-        prodfuenteApple.setBounds(360, 260, 50, 16);
+        prodfuenteApple.setBounds(360, 260, 50, 19);
 
+        prodgraficaApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodgraficaApple.setText("1");
         jPanel3.add(prodgraficaApple);
-        prodgraficaApple.setBounds(360, 300, 50, 16);
+        prodgraficaApple.setBounds(360, 300, 50, 19);
 
+        ensambladoresApple.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         ensambladoresApple.setText("1");
         jPanel3.add(ensambladoresApple);
-        ensambladoresApple.setBounds(360, 330, 50, 16);
+        ensambladoresApple.setBounds(360, 330, 50, 19);
 
+        prodplacabaseHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodplacabaseHP.setText("1");
         jPanel3.add(prodplacabaseHP);
-        prodplacabaseHP.setBounds(590, 160, 40, 16);
+        prodplacabaseHP.setBounds(590, 160, 40, 19);
 
+        prodcpuHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodcpuHP.setText("1");
         jPanel3.add(prodcpuHP);
-        prodcpuHP.setBounds(590, 200, 49, 16);
+        prodcpuHP.setBounds(590, 200, 49, 19);
 
+        prodramHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodramHP.setText("1");
         jPanel3.add(prodramHP);
-        prodramHP.setBounds(590, 230, 40, 16);
+        prodramHP.setBounds(590, 230, 40, 19);
 
+        prodfuenteHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodfuenteHP.setText("1");
         jPanel3.add(prodfuenteHP);
-        prodfuenteHP.setBounds(590, 260, 40, 16);
+        prodfuenteHP.setBounds(590, 260, 40, 19);
 
+        prodgraficaHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         prodgraficaHP.setText("1");
         jPanel3.add(prodgraficaHP);
-        prodgraficaHP.setBounds(590, 300, 30, 16);
+        prodgraficaHP.setBounds(590, 300, 30, 19);
 
+        ensambladoresHP.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         ensambladoresHP.setText("1");
         jPanel3.add(ensambladoresHP);
-        ensambladoresHP.setBounds(590, 330, 60, 16);
+        ensambladoresHP.setBounds(590, 330, 60, 19);
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1649,13 +1700,15 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel3.add(jButton13);
         jButton13.setBounds(620, 290, 40, 27);
 
+        jLabel60.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel60.setText("Duración de días en segundos");
         jPanel3.add(jLabel60);
-        jLabel60.setBounds(20, 380, 250, 16);
+        jLabel60.setBounds(20, 380, 250, 20);
 
+        duracionDias.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         duracionDias.setText("0");
         jPanel3.add(duracionDias);
-        duracionDias.setBounds(80, 420, 40, 16);
+        duracionDias.setBounds(80, 420, 40, 19);
 
         jButton14.setBackground(new java.awt.Color(204, 204, 204));
         jButton14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -1681,13 +1734,15 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel3.add(jButton15);
         jButton15.setBounds(480, 410, 40, 27);
 
+        jLabel69.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel69.setText("Días para la entrega");
         jPanel3.add(jLabel69);
-        jLabel69.setBounds(390, 380, 210, 16);
+        jLabel69.setBounds(390, 380, 210, 20);
 
+        diasEntrega.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         diasEntrega.setText("0");
         jPanel3.add(diasEntrega);
-        diasEntrega.setBounds(440, 420, 40, 16);
+        diasEntrega.setBounds(440, 420, 40, 19);
 
         jButton16.setBackground(new java.awt.Color(204, 204, 204));
         jButton16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -2473,6 +2528,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel diasEntregaApple;
     private javax.swing.JLabel diasEntregaHP;
     private javax.swing.JLabel diasHP;
+    private javax.swing.JLabel diasHP1;
     private javax.swing.JLabel diasInicio;
     private javax.swing.JLabel duracionDias;
     private javax.swing.JLabel ensambladoresApple;
@@ -2546,7 +2602,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2614,6 +2669,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel76;
