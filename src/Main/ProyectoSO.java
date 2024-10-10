@@ -6,18 +6,11 @@ package Main;
 
 
 import Compañias.Compania;
-import Almacen.Almacen;
-import Estructuras.Nodo;
-import Entes.Ensamblador;
 import Entes.ProjectManager;
-import Entes.Trabajador;
 import Entes.Director;
 import java.util.concurrent.Semaphore;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import GUI.Global;
-import GUI.Grafico;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -26,14 +19,8 @@ import GUI.Grafico;
  */
 public class ProyectoSO {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //Home homepage = new Home ();
-        //homepage.setVisible(true); 
-        
+    
+    public static void main(String[] args) throws InterruptedException {
         ManejadorInterfaz.getInterfaz().show();
         
          //Creamos la compania Apple y la cargamos a Global
@@ -62,12 +49,10 @@ public class ProyectoSO {
         Director directorApple = new Director(7,mutexApple,Global.getApple());
         directorApple.start();
         Director directorHP = new Director(7,mutexHP,Global.getHP());
-        directorHP.start();        
-        
-        
-        
-        
-        //Global.getGrafico().start();
+        directorHP.start();
+        Global.getGrafico().start();
+        TimeUnit.SECONDS.sleep(1);
+        Global.getGrafico().getVentana().setVisible(true);
     }
     
 }

@@ -32,7 +32,6 @@ public class Productor extends Trabajador {
                     }
                     obtainSalary();
                     work();
-                    //System.out.println("Trabajador: "+ this.name + " gana: "+this.salaryAcc+"$");
                     sleep(this.getCompania().getDuracionDia());
                     
                 } catch (InterruptedException ex) {
