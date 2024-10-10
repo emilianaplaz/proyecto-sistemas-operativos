@@ -37,7 +37,6 @@ public class Ensamblador extends Trabajador {
                 }
                 obtainSalary();
                 work();
-                //System.out.println("Trabajador: "+ this.name + " gana: "+this.salaryAcc+"$");
                 sleep(this.getCompania().getDuracionDia());
             } catch (InterruptedException ex) {
                 Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
@@ -145,7 +144,6 @@ public class Ensamblador extends Trabajador {
     public void agregarComputadora() {
         if (this.pcEstandar == 1) {
             this.pcEstandar = 0;
-            //System.out.println(this.getCompania().getAlmacen().getPcEstandar());
             this.getCompania().getAlmacen().setPcEstandar(this.getCompania().getAlmacen().getPcEstandar() + 1, this.getCompania().getTipoCompania());
             this.getCompania().getAlmacen().setpcAcumulados(this.getCompania().getAlmacen().getpcAcumulados() + 1);
         } else if (this.pcConGrafica == 1) {

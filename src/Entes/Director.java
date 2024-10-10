@@ -99,7 +99,8 @@ public class Director extends Trabajador {
                 this.getCompania().getAlmacen().setGanancias(this.getCompania().getAlmacen().getGanancias() + ganancias, this.getCompania().getTipoCompania());
                 this.getCompania().getAlmacen().setUtilidades(this.getCompania().getAlmacen().getUtilidades() + ganancias, this.getCompania().getTipoCompania());
             } else if (this.getCompania().getTipoCompania() == 1) { // HP
-                ganancias = (this.getCompania().getAlmacen().getPcEstandar() * 90000) + (this.getCompania().getAlmacen().getPcConGrafica() * 180000);
+                ganancias = (this.getCompania().getAlmacen().getPcEstandar() * 90000) + (this.getCompania().getAlmacen().getPcConGrafica() * 140000);
+
                 this.getCompania().getAlmacen().setGanancias(this.getCompania().getAlmacen().getGanancias() + ganancias, this.getCompania().getTipoCompania());
                 this.getCompania().getAlmacen().setUtilidades(this.getCompania().getAlmacen().getUtilidades() + ganancias, this.getCompania().getTipoCompania());
             }
