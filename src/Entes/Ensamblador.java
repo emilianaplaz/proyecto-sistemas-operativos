@@ -182,7 +182,7 @@ public class Ensamblador extends Trabajador {
                 // Empezamos el ensambljae de una pc con grafica.
                 this.pcConGrafica = this.pcConGrafica + 1;
                 // Reseteamos el contador temporal de PcEstandar.
-                this.contadorPcTemp = 0;
+                this.contadorPcTemp = this.contadorPcTemp - 2;
             } else {
                 // Si no se cumplen las condiciones para crear una computadora Grafica se crea una Estandar.
                 this.pcEstandar = this.pcEstandar + 1;
@@ -216,7 +216,7 @@ public class Ensamblador extends Trabajador {
                 // Aumentamos las pcGraficas almacenadas por el ensamblador.
                 this.pcConGrafica = this.pcConGrafica + 1;
                 // Reseteamos el contador temporal de PcEstandar.
-                this.contadorPcTemp = 0;
+                this.contadorPcTemp = this.contadorPcTemp -5;
             } else {
                 // Si no se cumplen las condiciones para crear una computadora Grafica se crea una Estandar.
                 this.pcEstandar = this.pcEstandar + 1;

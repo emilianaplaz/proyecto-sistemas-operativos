@@ -121,20 +121,20 @@ public class Interfaz extends javax.swing.JFrame {
     public void cambiarPcEstandarListas(int t,int tipoCompania){
         if(tipoCompania == 0){
             pcestandarListasApple.setText(Integer.toString(t));
-            estandarappleinicio.setText(Integer.toString(Global.getAlmacenApple().getpcAcumulados()));
+            estandarappleinicio.setText(Integer.toString(Global.getAlmacenApple().getpcAcumulados() + 1));
         }else{
             pcestandarListasHP.setText(Integer.toString(t));
-            estandarhpinicio.setText(Integer.toString(Global.getAlmacenHP().getpcAcumulados()));
+            estandarhpinicio.setText(Integer.toString(Global.getAlmacenHP().getpcAcumulados() + 1));
         }
     }
     
     public void cambiarPcGraficasListas(int t,int tipoCompania){
         if(tipoCompania == 0){
             pcgraficasListasApple.setText(Integer.toString(t));
-            graficasappleinicio.setText(Integer.toString(Global.getAlmacenApple().getpcConGraficaAcumulados()));
+            graficasappleinicio.setText(Integer.toString(Global.getAlmacenApple().getpcConGraficaAcumulados()+1));
         }else{
             pcgraficasListasHP.setText(Integer.toString(t));
-            graficashpinicio.setText(Integer.toString(Global.getAlmacenHP().getpcConGraficaAcumulados()));
+            graficashpinicio.setText(Integer.toString(Global.getAlmacenHP().getpcConGraficaAcumulados()+1));
         }
     }
     
@@ -594,12 +594,12 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel8.setBounds(150, 240, 170, 20);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel9.setText("PC Estándar vendidas");
+        jLabel9.setText("PC Estándar totales");
         jPanel2.add(jLabel9);
         jLabel9.setBounds(150, 280, 170, 20);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel10.setText("PC con Gráfica vendidas");
+        jLabel10.setText("PC con Gráfica totales");
         jPanel2.add(jLabel10);
         jLabel10.setBounds(150, 310, 170, 20);
 
